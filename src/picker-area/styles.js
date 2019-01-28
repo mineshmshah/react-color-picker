@@ -29,6 +29,27 @@ const PickerAreaComponent = styled.div`
   background-color: ${({baseColor}) => baseColor || '#F00'}
 `;
 
+const PickerComponent = styled.div`
+  width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1px solid #FFF;
+	position: absolute;
+	top: 45%;
+	left: 45%;
+	display: flex;
+	
+	::before {
+		width: 8px;
+    height: 8px;
+    content: "";
+    position: absolute;
+    border: 1px solid #999;
+    border-radius: 50%;
+	}
+`;
+
 export {
-  PickerAreaComponent
+  PickerAreaComponent,
+  PickerComponent
 }

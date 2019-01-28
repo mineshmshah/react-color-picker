@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PickerAreaComponent } from './styles'
+import { PickerAreaComponent, PickerComponent } from './styles'
 
 class PickerArea extends Component {
   constructor(props){
@@ -12,7 +12,9 @@ class PickerArea extends Component {
 
   render(){
     return(
-      <PickerAreaComponent baseColor={this.state.color} format={this.state.format}/>
+      <PickerAreaComponent baseColor={this.state.color} format={this.state.format}>
+        <PickerComponent/>
+      </PickerAreaComponent>
     )
   }
 
