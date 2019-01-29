@@ -16,14 +16,15 @@ class PickerArea extends Component {
   }
 
   handleClick(e) {
-    const pickerOffset = 7;
+    const pickerOffset = 6;
     const size = e.currentTarget.clientWidth;
-    let X =e.clientX - e.currentTarget.offsetLeft;
-    let Y =e.clientY - e.currentTarget.offsetTop;
+    let X =e.pageX - e.currentTarget.offsetLeft - 1;
+    let Y =e.pageY - e.currentTarget.offsetTop - 1;
     if (X > size) X = size;
     if (Y > size) Y = size;
     if (X < 0) X = 0;
     if (Y < 0) Y = 0;
+
 
     const newX = X - pickerOffset;
     const newY = Y - pickerOffset;
@@ -35,6 +36,7 @@ class PickerArea extends Component {
       }
     }))
   }
+
 
   render(){
     return(
