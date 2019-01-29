@@ -35,8 +35,8 @@ const PickerComponent = styled.div`
 	border-radius: 50%;
 	border: 1px solid #FFF;
 	position: absolute;
-	top: 45%;
-	left: 45%;
+	top: ${({pickerPosition}) => pickerPosition.y || '45%' };
+	left: ${({pickerPosition}) => pickerPosition.x || '45%' };
 	display: flex;
 	
 	::before {
