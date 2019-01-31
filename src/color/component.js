@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import PickerArea from '../picker-area'
 import store from './enhancer/connect'
 
@@ -9,7 +9,7 @@ export default store(
   }) =>(
     <div>
       <div>
-        <label>r</label>
+        <label>R</label>
         <input
           value={rInput}
           onChange={event => actions.updateRInputValue(event.target.value)}
