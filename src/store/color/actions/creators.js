@@ -1,9 +1,8 @@
 import colorTypes from './types'
 
-export const updateRValue = value =>  (
+export const updateRValue = () =>  (
   {
     type: colorTypes.UPDATE_R,
-    // value
   }
 );
 
