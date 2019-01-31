@@ -16,10 +16,10 @@ export default applyInterface(
     g_input : 0,
     b_input: 0,
     a_input: 1,
-    hue_input: 0,
-    saturation_input: 0,
-    value_input: 0,
-    lightness_input: 0,
+    h_input: 0,
+    s_input: 0,
+    v_input: 0,
+    l_input: 0,
     hex_input: '#000000',
   }
 );
