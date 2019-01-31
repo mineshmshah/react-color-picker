@@ -4,14 +4,14 @@ import store from './enhancer/connect'
 
 export default store(
   ({
-    rInput,
-    gInput,
-    bInput,
-    hInput,
-    sInput,
-    lInput,
-    vInput,
-    aInput,
+    r, rInput,
+    g, gInput,
+    b, bInput,
+    h, hInput,
+    s, sInput,
+    l, lInput,
+    v, vInput,
+    a, aInput,
     actions
   }) =>(
     <div>
@@ -74,6 +74,8 @@ export default store(
             onBlur={()=> actions.updateVValue()}
           />
         </label>
+      </div>
+      <div>
         <label htmlFor="aInput">A
           <input
             id='aInput'

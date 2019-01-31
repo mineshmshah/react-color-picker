@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
 import { PickerAreaComponent, PickerComponent } from './styles'
+import store from './enhancer/connect'
 
 class PickerArea extends Component {
   constructor(props){
     super(props)
     this.state = {
       format: 'HSV',
-      color: 'red',
       pickerPosition: {
         x:'45%',
         y:'45%'
       }
     };
     this.handleClick = this.handleClick.bind(this)
+    this.updateRGBA= this.updateRGBA.bind(this)
+  }
+
+  componentDidUpdate() {
+  }
+
+  updateRGBA(){
+    const color = `rgba(${this.props.r}, ${this.props.g}, ${this.props.b}, ${this.props.a})` || 'red';
+    debugger;
+    return color;
   }
 
   handleClick(e) {
@@ -41,8 +51,8 @@ class PickerArea extends Component {
   render(){
     return(
       <PickerAreaComponent
-        baseColor={this.state.color}
-        format={this.state.format}
+        baseColor={this.updateRGBA()}
+        format={this.props.format}
         onClick={this.handleClick}
       >
         <PickerComponent onClick={null} pickerPosition={this.state.pickerPosition} />
@@ -52,4 +62,4 @@ class PickerArea extends Component {
 
 }
 
-export default PickerArea
+export default store(PickerArea)
