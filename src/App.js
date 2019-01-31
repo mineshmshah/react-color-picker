@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import PickerArea from './picker-area'
+import Color from './color'
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <PickerArea />
+        <Color/>
       </div>
     );
   }
