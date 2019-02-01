@@ -1,6 +1,6 @@
 import React  from 'react';
-import PickerArea from '../picker-area'
-import RGBAInput from './RGBAInput'
+import PickerArea from './picker-area'
+import RGBInput from './RGBInput'
 import HSLVInput from './HSLVInput'
 import AInput from './AInput'
 import store from './enhancer/connect'
@@ -18,7 +18,7 @@ const Color =  ({
 }) =>(
   <div>
     <PickerArea/>
-    <RGBAInput
+    <RGBInput
       {...{r}}
       {...{g}}
       {...{b}}
