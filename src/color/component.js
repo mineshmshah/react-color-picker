@@ -1,5 +1,6 @@
 import React  from 'react';
 import PickerArea from '../picker-area'
+import RGBAInput from './RGBAInput'
 import store from './enhancer/connect'
 
 export default store(
@@ -15,32 +16,7 @@ export default store(
     actions
   }) =>(
     <div>
-      <div>
-        <label htmlFor="rInput">R
-          <input
-            id='rInput'
-            value={rInput}
-            onChange={event => actions.updateRInputValue(event.target.value)}
-            onBlur={()=> actions.updateRValue()}
-          />
-        </label>
-        <label htmlFor="gInput">G
-          <input
-            id='gInput'
-            value={gInput}
-            onChange={event => actions.updateGInputValue(event.target.value)}
-            onBlur={()=> actions.updateGValue()}
-          />
-        </label>
-        <label htmlFor="bInput">B
-          <input
-            id='bInput'
-            value={bInput}
-            onChange={event => actions.updateBInputValue(event.target.value)}
-            onBlur={()=> actions.updateBValue()}
-          />
-        </label>
-      </div>
+
       <div>
         <label htmlFor="hInput">H
           <input
@@ -86,6 +62,15 @@ export default store(
         </label>
       </div>
       <PickerArea/>
+      <RGBAInput
+        {...{r}}
+        {...{g}}
+        {...{b}}
+        {...{rInput}}
+        {...{gInput}}
+        {...{bInput}}
+        {...{actions}}
+      />
     </div>
   )
 )
