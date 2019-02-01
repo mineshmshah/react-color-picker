@@ -1,8 +1,7 @@
 import React  from 'react';
 import { NumericalInput, Label, Component,InputBox } from'./styles'
 
-export default
-({
+const RGBComponent = ({
   r, rInput,
   g, gInput,
   b, bInput,
@@ -39,4 +38,4 @@ export default
   </Component>
 )
 
-
+export default RGBComponent
