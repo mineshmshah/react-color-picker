@@ -18,6 +18,7 @@ import {
   updateVValue,
   updateAInputValue,
   updateAValue,
+  updateFormat,
 
 } from '../../store/color/actions/creators'
 
@@ -38,7 +39,8 @@ function mapStateToProps(state) {
     v: state.color.v,
     vInput: state.color.v_input,
     a: state.color.a,
-    aInput: state.color.a_input
+    aInput: state.color.a_input,
+    format: state.color.format
   }
 }
 
@@ -62,7 +64,7 @@ function mapDispatchToProps (dispatch) {
         updateVValue,
         updateAInputValue,
         updateAValue,
-
+        updateFormat,
 
       },
       dispatch
