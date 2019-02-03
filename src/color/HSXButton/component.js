@@ -7,8 +7,8 @@ const HSXButtonComponent=({
   actions,
 }) =>(
   <Component>
-    <Button format={format==='HSV'} onClick={()=>actions.updateFormat('HSV')}>HSV</Button>
-    <Button format={format!=='HSV'} onClick={()=>actions.updateFormat('HSL')}>HSL</Button>
+    <Button formatSelected={format==='HSV'} onClick={()=>actions.updateFormat('HSV')}>HSV</Button>
+    <Button formatSelected={format!=='HSV'} onClick={()=>actions.updateFormat('HSL')}>HSL</Button>
   </Component>
 )
 

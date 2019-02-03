@@ -15,7 +15,7 @@ const Button = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: ${({format}) => format  ? '#a9b5c7':'white'};
+  background-color: ${({formatSelected}) => formatSelected  ? '#a9b5c7':'white'};
   cursor: pointer;
 `
 

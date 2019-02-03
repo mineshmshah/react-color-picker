@@ -4,6 +4,7 @@ import RGBInput from './RGBInput'
 import HSLVInput from './HSLVInput'
 import AInput from './AInput'
 import HSXButton from './HSXButton'
+import HueSlider from './hue-slider'
 import store from './enhancer/connect'
 
 const Color =  ({
@@ -49,6 +50,7 @@ const Color =  ({
       {...{format}}
       {...{actions}}
     />
+    <HueSlider/>
   </div>
 )
 
