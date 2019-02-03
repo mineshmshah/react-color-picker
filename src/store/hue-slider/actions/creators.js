@@ -1,15 +1,16 @@
 import hueSliderTypes from './types'
 
-export const updateHueSliderPosition = value => (
+export const updateHueSliderPosition = (value, areaWidth) => (
   {
     type: hueSliderTypes.UPDATE_POSITION,
-    value
+    value,
+    areaWidth
   }
 );
 
-export const updateHueValue = value => (
+export const updateHueValue = value  => (
   {
     type: hueSliderTypes.UPDATE_HUE,
-    value
+    value,
   }
 );

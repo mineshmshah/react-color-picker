@@ -7,13 +7,13 @@ import {
 
 function mapStateToProps (state) {
   return{
-    position: state.hue.position
+    huePosition: state.hue.position
   }
 }
 
 function mapDispatchToProps (dispatch){
   return {
-    actions: bindActionCreators({
+    hueSliderActions: bindActionCreators({
       updateHueSliderPosition
     },
     dispatch

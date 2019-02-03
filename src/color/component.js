@@ -50,7 +50,9 @@ const Color =  ({
       {...{format}}
       {...{actions}}
     />
-    <HueSlider/>
+    <HueSlider
+      {...{h}}
+    />
   </div>
 )
 

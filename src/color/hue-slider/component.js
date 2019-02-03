@@ -1,10 +1,14 @@
 import React from 'react'
 import store from './enhancer/connect'
-import { Component , SliderBox } from "./styles";
+import { Component , SliderBox, PickerSlider } from "./styles";
 
-const HueSlider = () => (
+const hueAreaWidth = 198;
+
+const HueSlider = ({h,hueSliderActions,huePosition}) => (
   <Component>
-    <SliderBox/>
+    <SliderBox areaWidth={hueAreaWidth} >
+      <PickerSlider sliderX={huePosition} sliderPostion={hueSliderActions.updateHueSliderPosition(h,hueAreaWidth)}/>
+    </SliderBox>
   </Component>
 );
 
