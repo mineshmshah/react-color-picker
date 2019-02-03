@@ -103,3 +103,10 @@ export const updateAInputValue = value =>  (
     value
   }
 );
+
+export const updateFormat = value =>  (
+  {
+    type: colorTypes.UPDATE_FORMAT,
+    value
+  }
+);

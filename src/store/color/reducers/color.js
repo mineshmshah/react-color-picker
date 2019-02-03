@@ -71,4 +71,10 @@ export default{
       a_input: value
     }
   ),
+  [colorTypes.UPDATE_FORMAT] : (state, {value}) => (
+    {
+      ...state,
+      format: value
+    }
+  ),
 }

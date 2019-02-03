@@ -3,6 +3,7 @@ import PickerArea from './picker-area'
 import RGBInput from './RGBInput'
 import HSLVInput from './HSLVInput'
 import AInput from './AInput'
+import HSXButton from './HSXButton'
 import store from './enhancer/connect'
 
 const Color =  ({
@@ -14,7 +15,8 @@ const Color =  ({
   l, lInput,
   v, vInput,
   a, aInput,
-  actions
+  actions,
+  format
 }) =>(
   <div>
     <PickerArea/>
@@ -41,6 +43,10 @@ const Color =  ({
     <AInput
       {...{a}}
       {...{aInput}}
+      {...{actions}}
+    />
+    <HSXButton
+      {...{format}}
       {...{actions}}
     />
   </div>
