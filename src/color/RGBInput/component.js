@@ -1,5 +1,6 @@
 import React  from 'react';
 import { NumericalInput, Label, Component,InputBox } from'./styles'
+import store from './enhancer/connect'
 
 const RGBComponent = ({
   r, rInput,
@@ -38,4 +39,4 @@ const RGBComponent = ({
   </Component>
 )
 
-export default RGBComponent
+export default store(RGBComponent)

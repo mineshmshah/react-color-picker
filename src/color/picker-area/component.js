@@ -17,7 +17,7 @@ class PickerArea extends Component {
   }
 
   updateRGBA(){
-    const color = `rgba(${this.props.r}, ${this.props.g}, ${this.props.b}, ${this.props.a})` || 'red';
+    const color = `hsla(${this.props.h}, 100%, 50%, ${this.props.a})` || 'red';
     return color;
   }
 
