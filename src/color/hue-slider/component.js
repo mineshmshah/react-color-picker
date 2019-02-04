@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import store from './enhancer/connect'
 import { HueSliderComponent , SliderBox, PickerSlider } from "./styles";
 
@@ -57,3 +58,20 @@ class HueSlider extends Component {
 }
 
 export default store(HueSlider);
+
+
+HueSlider.propTypes = {
+  hueSliderActions: PropTypes.objectOf(PropTypes.func),
+  actions: PropTypes.objectOf(PropTypes.func),
+  h: PropTypes.number,
+  areaWidth:PropTypes.number,
+  position:PropTypes.number,
+};
+
+HueSlider.defaultProps = {
+  hueSliderActions: {},
+  actions: {},
+  h: 0,
+  areaWidth:198,
+  position:0,
+};
