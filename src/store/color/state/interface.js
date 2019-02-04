@@ -14,7 +14,6 @@ export default initialState => {
     l: PropTypes.number,
     hex: PropTypes.string,
     format: PropTypes.string,
-    a_input: PropTypes.number,
     hex_input: PropTypes.string,
   };
 

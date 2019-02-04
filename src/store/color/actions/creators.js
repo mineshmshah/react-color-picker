@@ -52,18 +52,13 @@ export const updateVValue = value =>  (
   }
 );
 
-export const updateAValue = () =>  (
+export const updateAValue = value =>  (
   {
     type: colorTypes.UPDATE_A,
-  }
-);
-
-export const updateAInputValue = value =>  (
-  {
-    type: colorTypes.UPDATE_A_INPUT,
     value
   }
 );
+
 
 export const updateFormat = value =>  (
   {

@@ -39,7 +39,6 @@ class HSXComponent extends Component {
     const {hInput, sInput, lInput, vInput, format} = this.props;
     const {updateHInputValue, updateSInputValue, updateLInputValue, updateVInputValue ,validateHSXInput} = this.props.hsxInputActions;
     const hsvFormat = format === 'HSV';
-    debugger;
     return(
       <InputComponent>
         <InputBox>

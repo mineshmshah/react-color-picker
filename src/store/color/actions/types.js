@@ -9,8 +9,6 @@ const UPDATE_V = 'UPDATE_V'
 const UPDATE_L = 'UPDATE_L'
 
 // Update color inputs
-const UPDATE_A_INPUT = 'UPDATE_A_INPUT'
-
 const UPDATE_HEXA = 'UPDATE_HEXA'
 
 const UPDATE_FORMAT = 'UPDATE_FORMAT'

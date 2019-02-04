@@ -9,7 +9,6 @@ import {
   updateSValue,
   updateLValue,
   updateVValue,
-  updateAInputValue,
   updateAValue,
   updateFormat,
 
@@ -25,7 +24,6 @@ function mapStateToProps(state) {
     l: state.color.l,
     v: state.color.v,
     a: state.color.a,
-    aInput: state.color.a_input,
     format: state.color.format
   }
 }
@@ -41,7 +39,6 @@ function mapDispatchToProps (dispatch) {
         updateSValue,
         updateLValue,
         updateVValue,
-        updateAInputValue,
         updateAValue,
         updateFormat,
 

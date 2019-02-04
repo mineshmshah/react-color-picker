@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 
-const Component = styled.div`
+const InputComponent = styled.div`
   display: flex;
   background-color: #edf2f7;
-  width: 100px;
+  width: 250px;
   justify-content: center;
 `
 
@@ -38,5 +38,5 @@ export {
   NumericalInput,
   InputBox,
   Label,
-  Component
+  InputComponent
 }

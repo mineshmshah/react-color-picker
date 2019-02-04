@@ -2,7 +2,7 @@ import React  from 'react';
 import PickerArea from './picker-area'
 import RGBInput from './rgb-Input'
 import HSXInput from './hsx-input'
-import AInput from './AInput'
+import AInput from './a-Input'
 import HSXButton from './HSXButton'
 import HueSlider from './hue-slider'
 import store from './enhancer/connect'
@@ -28,7 +28,6 @@ const Color =  ({
     />
     <AInput
       {...{a}}
-      {...{aInput}}
       {...{actions}}
     />
     <HSXButton

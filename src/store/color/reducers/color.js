@@ -1,19 +1,5 @@
 import colorTypes from '../actions/types'
 
-const returnValidatedInput = (state, value, min, max) => {
-  const currentInput = state[`${value}_input`];
-  let parsedValue = Number.parseInt(state[`${value}`],10);
-  let parsedInput = Number.parseInt(state[`${value}_input`],10);
-  const validityCheck = typeof(parsedInput) === 'number' && !Number.isNaN(+currentInput)
-    && parsedInput >= min && parsedInput <= max;
-  validityCheck ? parsedValue = parsedInput :  parsedInput = parsedValue;
-  return({
-    ...state,
-    [`${value}_input`]: parsedInput,
-    [`${value}`]: parsedValue
-  })
-};
-
 export default{
   [colorTypes.UPDATE_R] : (state, {value}) => (
     {
@@ -57,11 +43,10 @@ export default{
       v: value
     }
   ),
-  [colorTypes.UPDATE_A] : state => returnValidatedInput(state,'a',0, 255),
-  [colorTypes.UPDATE_A_INPUT] : (state, {value}) => (
+  [colorTypes.UPDATE_A] : (state, {value}) => (
     {
       ...state,
-      a_input: value
+      a: value
     }
   ),
   [colorTypes.UPDATE_FORMAT] : (state, {value}) => (
