@@ -3,8 +3,9 @@ import PickerArea from './picker-area'
 import RGBInput from './rgb-Input'
 import HSXInput from './hsx-input'
 import AInput from './a-Input'
-import HSXButton from './HSXButton'
+import HSXButton from './hsx-button'
 import HueSlider from './hue-slider'
+import AlphaSlider from './alpha-slider'
 import store from './enhancer/connect'
 
 const Color =  ({
@@ -35,6 +36,11 @@ const Color =  ({
       {...{actions}}
     />
     <HueSlider
+      {...{h}}
+      {...{actions}}
+      areaWidth={200}
+    />
+    <AlphaSlider
       {...{h}}
       {...{actions}}
       areaWidth={200}

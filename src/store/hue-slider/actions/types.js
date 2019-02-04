@@ -2,6 +2,5 @@ const UPDATE_POSITION = 'UPDATE_POSITION';
 const UPDATE_HUE = 'UPDATE_HUE';
 
 export default {
-  UPDATE_HUE,
   UPDATE_POSITION
 }
