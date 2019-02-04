@@ -13,10 +13,6 @@ export default applyInterface(
     hex: '#000000',
     format: 'HSV',
     a_input: 1,
-    h_input: 0,
-    s_input: 0,
-    v_input: 0,
-    l_input: 0,
     hex_input: '#000000',
   }
 );

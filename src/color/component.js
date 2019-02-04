@@ -1,23 +1,14 @@
 import React  from 'react';
 import PickerArea from './picker-area'
 import RGBInput from './RGBInput'
-import HSLVInput from './HSLVInput'
+import HSXInput from './hsx-input'
 import AInput from './AInput'
 import HSXButton from './HSXButton'
 import HueSlider from './hue-slider'
 import store from './enhancer/connect'
 
 const Color =  ({
-  r, rInput,
-  g, gInput,
-  b, bInput,
-  h, hInput,
-  s, sInput,
-  l, lInput,
-  v, vInput,
-  a, aInput,
-  actions,
-  format
+  r, g, b, a, h, s, l, v, aInput, actions, format
 }) =>(
   <div>
     <PickerArea/>
@@ -25,20 +16,13 @@ const Color =  ({
       {...{r}}
       {...{g}}
       {...{b}}
-      {...{rInput}}
-      {...{gInput}}
-      {...{bInput}}
       {...{actions}}
     />
-    <HSLVInput
+    <HSXInput
       {...{h}}
       {...{s}}
       {...{l}}
       {...{v}}
-      {...{hInput}}
-      {...{sInput}}
-      {...{lInput}}
-      {...{vInput}}
       {...{actions}}
     />
     <AInput

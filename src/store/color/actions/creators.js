@@ -22,54 +22,32 @@ export const updateBValue = value =>  (
 );
 
 
-export const updateHValue = () =>  (
+export const updateHValue = value =>  (
   {
     type: colorTypes.UPDATE_H,
-  }
-);
-
-export const updateHInputValue = value =>  (
-  {
-    type: colorTypes.UPDATE_H_INPUT,
     value
   }
 );
 
-export const updateSValue = () =>  (
+
+export const updateSValue = value =>  (
   {
     type: colorTypes.UPDATE_S,
-  }
-);
-
-export const updateSInputValue = value =>  (
-  {
-    type: colorTypes.UPDATE_S_INPUT,
     value
   }
 );
 
-export const updateLValue = () =>  (
+export const updateLValue = value =>  (
   {
     type: colorTypes.UPDATE_L,
-  }
-);
-
-export const updateLInputValue = value =>  (
-  {
-    type: colorTypes.UPDATE_L_INPUT,
     value
   }
 );
 
-export const updateVValue = () =>  (
+
+export const updateVValue = value =>  (
   {
     type: colorTypes.UPDATE_V,
-  }
-);
-
-export const updateVInputValue = value =>  (
-  {
-    type: colorTypes.UPDATE_V_INPUT,
     value
   }
 );

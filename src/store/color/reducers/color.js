@@ -26,38 +26,35 @@ export default{
       ...state,
       g: value
     }
-  ),[colorTypes.UPDATE_B] : (state, {value}) => (
+  ),
+  [colorTypes.UPDATE_B] : (state, {value}) => (
     {
       ...state,
       b: value
     }
   ),
-  [colorTypes.UPDATE_H] : state => returnValidatedInput(state,'h',0, 359),
-  [colorTypes.UPDATE_H_INPUT] : (state, {value}) => (
+  [colorTypes.UPDATE_H] : (state, {value}) => (
     {
       ...state,
-      h_input: value
+      h: value
     }
   ),
-  [colorTypes.UPDATE_S] : state => returnValidatedInput(state,'s',0, 100),
-  [colorTypes.UPDATE_S_INPUT] : (state, {value}) => (
+  [colorTypes.UPDATE_S] : (state, {value}) => (
     {
       ...state,
-      s_input: value
+      s: value
     }
   ),
-  [colorTypes.UPDATE_L] : state => returnValidatedInput(state,'l',0, 100),
-  [colorTypes.UPDATE_L_INPUT] : (state, {value}) => (
+  [colorTypes.UPDATE_L] : (state, {value}) => (
     {
       ...state,
-      l_input: value
+      l: value
     }
   ),
-  [colorTypes.UPDATE_V] : state => returnValidatedInput(state,'v',0, 100),
-  [colorTypes.UPDATE_V_INPUT] : (state, {value}) => (
+  [colorTypes.UPDATE_V] : (state, {value}) => (
     {
       ...state,
-      v_input: value
+      v: value
     }
   ),
   [colorTypes.UPDATE_A] : state => returnValidatedInput(state,'a',0, 255),

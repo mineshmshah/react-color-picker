@@ -32,7 +32,6 @@ class HueSlider extends Component {
     if (xValue < 0) xValue = 0;
 
     const hue = Math.round((xValue/areaWidth) * 359);
-    actions.updateHInputValue(hue)
     actions.updateHValue(hue);
   }
 
