@@ -1,6 +1,6 @@
 import React  from 'react';
 import PickerArea from './picker-area'
-import RGBInput from './RGBInput'
+import RGBInput from './rgb-Input'
 import HSXInput from './hsx-input'
 import AInput from './AInput'
 import HSXButton from './HSXButton'
@@ -24,6 +24,7 @@ const Color =  ({
       {...{l}}
       {...{v}}
       {...{actions}}
+      {...{format}}
     />
     <AInput
       {...{a}}
