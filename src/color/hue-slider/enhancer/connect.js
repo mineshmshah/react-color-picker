@@ -7,7 +7,7 @@ import {
 
 function mapStateToProps (state) {
   return{
-    huePosition: state.hue.position
+    position: state.hue.position
   }
 }
 

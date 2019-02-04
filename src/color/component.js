@@ -52,6 +52,8 @@ const Color =  ({
     />
     <HueSlider
       {...{h}}
+      {...{actions}}
+      areaWidth={200}
     />
   </div>
 )

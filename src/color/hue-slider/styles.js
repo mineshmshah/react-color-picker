@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Component = styled.div`
+const HueSliderComponent = styled.div`
   display: flex;
   justify-content: start;
 `;
@@ -31,7 +31,7 @@ const PickerSlider = styled.div`
 `;
 
 export {
-  Component,
+  HueSliderComponent,
   SliderBox,
   PickerSlider
 }
