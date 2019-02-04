@@ -5,7 +5,7 @@ import {
   updateGInputValue,
   updateRInputValue,
   updateBInputValue,
-  validateRGBAInput
+  validateRGBInput
 } from '../../../store/rgb-input/actions/creators'
 
 function mapStateToProps (state) {
@@ -21,7 +21,7 @@ function mapDispatchToProps (dispatch){
       updateGInputValue,
       updateRInputValue,
       updateBInputValue,
-      validateRGBAInput
+      validateRGBInput
     },
     dispatch
     )
