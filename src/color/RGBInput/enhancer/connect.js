@@ -17,7 +17,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch){
   return {
-    hueSliderActions: bindActionCreators({
+    rgbInputActions: bindActionCreators({
       updateGInputValue,
       updateRInputValue,
       updateBInputValue,

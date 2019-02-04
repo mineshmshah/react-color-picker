@@ -2,10 +2,12 @@ import {takeEvery, put, select} from 'redux-saga/effects'
 import rgbInputTypes from '../actions/types'
 import colorTypes from '../../color/actions/types'
 
-function * validateRGBInput ({value, max, min}) {
+function * validateRGBInput ({value, min, max}) {
 
   const currentInput = yield select(state => state.rgbInput[`${value}_input`])
+
   const currentValue = yield select(state => state.color[value])
+
 
   const parsedInput = Number.parseInt(currentInput,10);
   const parsedValue = Number.parseInt(currentValue,10);
@@ -15,13 +17,13 @@ function * validateRGBInput ({value, max, min}) {
 
   if (validityCheck) {
     yield put({
-      type: colorTypes[[`UPDATE_${value}`]],
-      [`${value}`]: parsedInput
-    })
+      type: colorTypes[[`UPDATE_${value.toUpperCase()}`]],
+      value: parsedInput
+    });
   } else {
     yield put({
-      type: rgbInputTypes[`UPDATE_${value}_INPUT`],
-      [`${value}`]: parsedValue
+      type: rgbInputTypes[`UPDATE_${value.toUpperCase()}_INPUT`],
+      value: parsedValue
     })
   }
 }

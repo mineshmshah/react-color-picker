@@ -15,25 +15,21 @@ const returnValidatedInput = (state, value, min, max) => {
 };
 
 export default{
-  [colorTypes.UPDATE_R] : state => returnValidatedInput(state,'r',0, 255),
-  [colorTypes.UPDATE_R_INPUT] : (state, {value}) => (
+  [colorTypes.UPDATE_R] : (state, {value}) => (
     {
       ...state,
-      r_input: value
+      r: value
     }
   ),
-  [colorTypes.UPDATE_G] : state => returnValidatedInput(state,'g',0, 255),
-  [colorTypes.UPDATE_G_INPUT] : (state, {value}) => (
+  [colorTypes.UPDATE_G] : (state, {value}) => (
     {
       ...state,
-      g_input: value
+      g: value
     }
-  ),
-  [colorTypes.UPDATE_B] : state => returnValidatedInput(state,'b',0, 255),
-  [colorTypes.UPDATE_B_INPUT] : (state, {value}) => (
+  ),[colorTypes.UPDATE_B] : (state, {value}) => (
     {
       ...state,
-      b_input: value
+      b: value
     }
   ),
   [colorTypes.UPDATE_H] : state => returnValidatedInput(state,'h',0, 359),

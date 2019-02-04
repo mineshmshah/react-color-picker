@@ -21,11 +21,11 @@ export const updateBInputValue = value =>  (
   }
 );
 
-export const validateRGBAInput = (value, max, min) => (
+export const validateRGBAInput = (value, min, max) => (
   {
     type:rgbInputTypes.VALIDATE_RGB_INPUT,
     value,
-    max,
-    min
+    min,
+    max
   }
 );
