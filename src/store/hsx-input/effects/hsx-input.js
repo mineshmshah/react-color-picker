@@ -1,12 +1,13 @@
 import {takeEvery, put, select} from 'redux-saga/effects'
-import rgbInputTypes from '../actions/types'
+import hsxInputTypes from '../actions/types'
 import colorTypes from '../../color/actions/types'
 
-function * validateRGBInput ({value, min, max}) {
+function * validateHSXInput ({value, min, max}) {
 
-  const currentInput = yield select(state => state.rgbInput[`${value}_input`])
+  const currentInput = yield select(state => state.hsxInput[`${value}_input`])
 
   const currentValue = yield select(state => state.color[value])
+
 
   const parsedInput = Number.parseInt(currentInput,10);
   const parsedValue = Number.parseInt(currentValue,10);
@@ -21,12 +22,12 @@ function * validateRGBInput ({value, min, max}) {
     });
   } else {
     yield put({
-      type: rgbInputTypes[`UPDATE_${value.toUpperCase()}_INPUT`],
+      type: hsxInputTypes[`UPDATE_${value.toUpperCase()}_INPUT`],
       value: parsedValue
     })
   }
 }
 
 export default [
-  takeEvery(rgbInputTypes.VALIDATE_RGB_INPUT, validateRGBInput)
+  takeEvery(hsxInputTypes.VALIDATE_HSX_INPUT, validateHSXInput)
 ]

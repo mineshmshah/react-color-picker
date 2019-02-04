@@ -1,43 +1,26 @@
 import colorTypes from './types'
 
-export const updateRValue = () =>  (
+export const updateRValue = value =>  (
   {
     type: colorTypes.UPDATE_R,
-  }
-);
-
-export const updateRInputValue = value =>  (
-  {
-    type: colorTypes.UPDATE_R_INPUT,
     value
   }
 );
 
-export const updateGValue = () =>  (
+export const updateGValue = value =>  (
   {
     type: colorTypes.UPDATE_G,
-  }
-);
-
-export const updateGInputValue = value =>  (
-  {
-    type: colorTypes.UPDATE_G_INPUT,
     value
   }
 );
 
-export const updateBValue = () =>  (
+export const updateBValue = value =>  (
   {
     type: colorTypes.UPDATE_B,
-  }
-);
-
-export const updateBInputValue = value =>  (
-  {
-    type: colorTypes.UPDATE_B_INPUT,
     value
   }
 );
+
 
 export const updateHValue = () =>  (
   {

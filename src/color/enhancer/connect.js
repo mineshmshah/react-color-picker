@@ -25,11 +25,8 @@ import {
 function mapStateToProps(state) {
   return {
     r: state.color.r,
-    rInput: state.color.r_input,
     g: state.color.g,
-    gInput: state.color.g_input,
     b: state.color.b,
-    bInput: state.color.b_input,
     h: state.color.h,
     hInput: state.color.h_input,
     s: state.color.s,
@@ -48,11 +45,8 @@ function mapDispatchToProps (dispatch) {
   return {
     actions: bindActionCreators(
       {
-        updateRInputValue,
         updateRValue,
-        updateGInputValue,
         updateGValue,
-        updateBInputValue,
         updateBValue,
         updateHInputValue,
         updateHValue,

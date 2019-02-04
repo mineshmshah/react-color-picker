@@ -20,7 +20,7 @@ class RGBComponent extends Component {
 
   updateInputValues (prevProps){
     const {r, g, b} = this.props;
-    const {updateRInputValue, updateGInputValue, updateBInputValue} = this.props.rgbInputActions
+    const {updateRInputValue, updateGInputValue, updateBInputValue} = this.props.rgbInputActions;
     if(prevProps){
       if(this.props.r !== prevProps.r) updateRInputValue(r);
       if(this.props.g !== prevProps.g) updateGInputValue(g);
@@ -34,7 +34,7 @@ class RGBComponent extends Component {
 
   render() {
     const {rInput, gInput, bInput} = this.props;
-    const {updateRInputValue, updateGInputValue, updateBInputValue ,validateRGBAInput} = this.props.rgbInputActions
+    const {updateRInputValue, updateGInputValue, updateBInputValue ,validateRGBInput} = this.props.rgbInputActions
     return(
       <InputComponent>
         <InputBox>
@@ -43,7 +43,7 @@ class RGBComponent extends Component {
             id='rInput'
             value={rInput}
             onChange={event => updateRInputValue(event.target.value)}
-            onBlur={()=> validateRGBAInput('r',0, 255)}
+            onBlur={()=> validateRGBInput('r',0, 255)}
           />
         </InputBox>
         <InputBox>
@@ -52,7 +52,7 @@ class RGBComponent extends Component {
             id='gInput'
             value={gInput}
             onChange={event => updateGInputValue(event.target.value)}
-            onBlur={()=> validateRGBAInput('g',0, 255)}
+            onBlur={()=> validateRGBInput('g',0, 255)}
           />
         </InputBox>
         <InputBox>
@@ -61,7 +61,7 @@ class RGBComponent extends Component {
             id='bInput'
             value={bInput}
             onChange={event => updateBInputValue(event.target.value)}
-            onBlur={()=> validateRGBAInput('b',0, 255)}
+            onBlur={()=> validateRGBInput('b',0, 255)}
           />
         </InputBox>
       </InputComponent>
