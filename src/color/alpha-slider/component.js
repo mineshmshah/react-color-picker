@@ -32,7 +32,6 @@ class HueSlider extends Component {
     if (xValue < 0) xValue = 0;
 
     const alpha =xValue/areaWidth;
-    console.log(alpha)
     actions.updateAValue(alpha);
   }
 
@@ -77,7 +76,7 @@ HueSlider.defaultProps = {
   alphaSliderActions: {},
   actions: {},
   h: 0,
-  s: 100,
+  sl: 100,
   l: 50,
   a: 1.00,
   areaWidth:198,

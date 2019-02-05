@@ -30,7 +30,6 @@ class HueSlider extends Component {
     let xValue =e.pageX - sliderAreaOffset;
     if (xValue > areaWidth) xValue = areaWidth;
     if (xValue < 0) xValue = 0;
-
     const hue = Math.round((xValue/areaWidth) * 359);
     actions.updateHValue(hue);
   }
