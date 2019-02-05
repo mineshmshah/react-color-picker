@@ -67,6 +67,13 @@ export const updateAValue = value =>  (
 );
 
 
+export const updateHexValue = value =>  (
+  {
+    type: colorTypes.UPDATE_HEX,
+    value
+  }
+);
+
 export const updateFormat = value =>  (
   {
     type: colorTypes.UPDATE_FORMAT,

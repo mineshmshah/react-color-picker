@@ -5,7 +5,7 @@ export default applyInterface(
     r: 255,
     g: 0,
     b: 0,
-    a: 1.00,
+    a: "1.00",
     h: 0,
     sv: 100,
     sl: 100,
@@ -13,6 +13,5 @@ export default applyInterface(
     l: 50,
     hex: '#FF0000',
     format: 'HSL',
-    hex_input: '#FF0000',
   }
 );

@@ -55,6 +55,12 @@ export default{
       a: value
     }
   ),
+  [colorTypes.UPDATE_HEX] : (state, {value}) => (
+    {
+      ...state,
+      hex: value
+    }
+  ),
   [colorTypes.UPDATE_FORMAT] : (state, {value}) => (
     {
       ...state,

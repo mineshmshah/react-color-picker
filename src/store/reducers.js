@@ -5,6 +5,7 @@ import rgbInputReducer from './rgb-input/reducers'
 import hsxInputReducer from './hsx-input/reducers'
 import aInputReducer from './a-input/reducers'
 import alphaSliderReducer from './alpha-slider/reducers'
+import hexInputReducer from './hex-input/reducers'
 
 export default combineReducers({
   color: colorReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   alpha: alphaSliderReducer,
   rgbInput: rgbInputReducer,
   hsxInput: hsxInputReducer,
-  aInput: aInputReducer
+  aInput: aInputReducer,
+  hexInput: hexInputReducer
 })

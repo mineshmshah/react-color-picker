@@ -34,7 +34,6 @@ class PickerArea extends Component {
 
     const newX = X - pickerOffset;
     const newY = Y - pickerOffset;
-    console.log(`x:${X}, y:${Y}`)
     this.setState(() => ({
       pickerPosition: {
         x:`${newX}px`,

@@ -7,11 +7,8 @@ export const updateAInputValue = value =>  (
   }
 );
 
-export const validateAInput = (value, min, max) => (
+export const validateAInput = () => (
   {
     type:aInputTypes.VALIDATE_A_INPUT,
-    value,
-    min,
-    max
   }
 );

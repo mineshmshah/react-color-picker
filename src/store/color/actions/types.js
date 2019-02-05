@@ -10,7 +10,7 @@ const UPDATE_V = 'UPDATE_V'
 const UPDATE_L = 'UPDATE_L'
 
 // Update color inputs
-const UPDATE_HEXA = 'UPDATE_HEXA'
+const UPDATE_HEX = 'UPDATE_HEX'
 
 const UPDATE_FORMAT = 'UPDATE_FORMAT'
 
@@ -24,6 +24,6 @@ export default {
   UPDATE_SV,
   UPDATE_SL,
   UPDATE_V,
-  UPDATE_HEXA,
+  UPDATE_HEX,
   UPDATE_FORMAT,
 }

@@ -1,0 +1,9 @@
+// Update color inputs
+const UPDATE_HEX_INPUT = 'UPDATE_HEX_INPUT';
+
+const VALIDATE_HEX_INPUT = 'VALIDATE_HEX_INPUT';
+
+export default {
+  UPDATE_HEX_INPUT,
+  VALIDATE_HEX_INPUT
+}

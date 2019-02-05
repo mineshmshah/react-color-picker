@@ -4,7 +4,7 @@ export default initialState => {
   const state = initialState;
 
   state.PropTypes = {
-    a_input: PropTypes.string,
+    hex_input: PropTypes.string,
   };
 
   return state;

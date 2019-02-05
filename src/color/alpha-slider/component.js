@@ -4,7 +4,7 @@ import store from './enhancer/connect'
 import { AlphaSliderComponent , SliderBox, PickerSlider, SliderBoxAlphaLayer } from "./styles";
 
 
-class HueSlider extends Component {
+class AlphaSlider extends Component {
 
   constructor(props){
     super(props)
@@ -31,7 +31,7 @@ class HueSlider extends Component {
     if (xValue > areaWidth) xValue = areaWidth;
     if (xValue < 0) xValue = 0;
 
-    const alpha =xValue/areaWidth;
+    const alpha =(xValue/areaWidth).toFixed(2);
     actions.updateAValue(alpha);
   }
 
@@ -58,27 +58,26 @@ class HueSlider extends Component {
   }
 }
 
-export default store(HueSlider);
+export default store(AlphaSlider);
 
-
-HueSlider.propTypes = {
+AlphaSlider.propTypes = {
   alphaSliderActions: PropTypes.objectOf(PropTypes.func),
   actions: PropTypes.objectOf(PropTypes.func),
   h: PropTypes.number,
   sl: PropTypes.number,
   l: PropTypes.number,
-  a: PropTypes.number,
+  a: PropTypes.string,
   areaWidth:PropTypes.number,
   position:PropTypes.number,
 };
 
-HueSlider.defaultProps = {
+AlphaSlider.defaultProps = {
   alphaSliderActions: {},
   actions: {},
   h: 0,
   sl: 100,
   l: 50,
-  a: 1.00,
+  a: "1.00",
   areaWidth:198,
   position:0,
 };

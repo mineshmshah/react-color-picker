@@ -22,9 +22,9 @@ class AComponent extends Component {
     const {a} = this.props;
     const {updateAInputValue} = this.props.aInputActions;
     if(prevProps){
-      if(this.props.a !== prevProps.a) updateAInputValue(a.toFixed(2));
+      if(this.props.a !== prevProps.a) updateAInputValue(a);
     } else {
-      updateAInputValue(a.toFixed(2));
+      updateAInputValue(a);
     }
   }
 
@@ -52,7 +52,7 @@ export default store(AComponent)
 
 AComponent.propTypes ={
   aInputActions: PropTypes.objectOf(PropTypes.func),
-  a: PropTypes.number,
+  a: PropTypes.string,
   aInput:  PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
@@ -61,6 +61,6 @@ AComponent.propTypes ={
 
 AComponent.defaultProps ={
   aInputActions: {},
-  a: 1.00,
-  aInput: 1.00,
+  a: "1.00",
+  aInput: "1.00",
 };

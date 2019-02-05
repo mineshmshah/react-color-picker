@@ -7,7 +7,7 @@ export default initialState => {
     r: PropTypes.number,
     g: PropTypes.number,
     b: PropTypes.number,
-    a: PropTypes.number,
+    a: PropTypes.string,
     h: PropTypes.number,
     sv: PropTypes.number,
     sl: PropTypes.number,
@@ -15,7 +15,6 @@ export default initialState => {
     l: PropTypes.number,
     hex: PropTypes.string,
     format: PropTypes.string,
-    hex_input: PropTypes.string,
   };
 
   return state;
