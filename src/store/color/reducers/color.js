@@ -25,10 +25,16 @@ export default{
       h: value
     }
   ),
-  [colorTypes.UPDATE_S] : (state, {value}) => (
+  [colorTypes.UPDATE_SV] : (state, {value}) => (
     {
       ...state,
-      s: value
+      sv: value
+    }
+  ),
+  [colorTypes.UPDATE_SL] : (state, {value}) => (
+    {
+      ...state,
+      sl: value
     }
   ),
   [colorTypes.UPDATE_L] : (state, {value}) => (

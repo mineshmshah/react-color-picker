@@ -30,9 +30,16 @@ export const updateHValue = value =>  (
 );
 
 
-export const updateSValue = value =>  (
+export const updateSVValue = value =>  (
   {
-    type: colorTypes.UPDATE_S,
+    type: colorTypes.UPDATE_SV,
+    value
+  }
+);
+
+export const updateSLValue = value =>  (
+  {
+    type: colorTypes.UPDATE_SL,
     value
   }
 );

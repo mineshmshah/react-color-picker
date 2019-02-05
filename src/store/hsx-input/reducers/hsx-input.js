@@ -7,12 +7,20 @@ export default{
       h_input: value
     }
   ),
-  [hsxInputTypes.UPDATE_S_INPUT] : (state, {value}) => (
+  [hsxInputTypes.UPDATE_SV_INPUT] : (state, {value}) => (
     {
       ...state,
-      s_input: value
+      sv_input: value
     }
   ),
+  [hsxInputTypes.UPDATE_SL_INPUT] : (state, {value}) => {
+    return (
+      {
+        ...state,
+        sl_input: value
+      }
+    );
+  },
   [hsxInputTypes.UPDATE_L_INPUT] : (state, {value}) => (
     {
       ...state,

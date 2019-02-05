@@ -9,7 +9,7 @@ import AlphaSlider from './alpha-slider'
 import store from './enhancer/connect'
 
 const Color =  ({
-  r, g, b, a, h, s, l, v, aInput, actions, format
+  r, g, b, a, h, sl, sv, l, v, aInput, actions, format
 }) =>(
   <div>
     <PickerArea/>
@@ -21,7 +21,8 @@ const Color =  ({
     />
     <HSXInput
       {...{h}}
-      {...{s}}
+      {...{sl}}
+      {...{sv}}
       {...{l}}
       {...{v}}
       {...{actions}}
@@ -42,7 +43,7 @@ const Color =  ({
     />
     <AlphaSlider
       {...{h}}
-      {...{s}}
+      {...{sl}}
       {...{l}}
       {...{a}}
       {...{actions}}

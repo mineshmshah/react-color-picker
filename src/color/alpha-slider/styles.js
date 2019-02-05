@@ -18,7 +18,7 @@ const  SliderBox = styled.div`
 	height: 28px;
 	float: left;
 	background: url(${img});
-	background: ${({hue})=>`linear-gradient(to right, hsla(${hue},100%,50%,0) 0%, hsla(${hue},100%,50%,1) 100%)`};
+	background: ${({hue,sat,light})=>`linear-gradient(to right, hsla(${hue},${sat},${light},0) 0%, hsla(${hue},${sat},${light},1) 100%)`};
 `
 
 const PickerSlider = styled.div`

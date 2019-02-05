@@ -3,7 +3,6 @@ import hsxInputTypes from '../actions/types'
 import colorTypes from '../../color/actions/types'
 
 function * validateHSXInput ({value, min, max}) {
-
   const currentInput = yield select(state => state.hsxInput[`${value}_input`])
 
   const currentValue = yield select(state => state.color[value])
@@ -14,7 +13,6 @@ function * validateHSXInput ({value, min, max}) {
 
   const validityCheck = typeof(parsedInput) === 'number' && !Number.isNaN(+currentInput)
     && parsedInput >= min && parsedInput <= max;
-
   if (validityCheck) {
     yield put({
       type: colorTypes[[`UPDATE_${value.toUpperCase()}`]],

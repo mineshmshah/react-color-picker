@@ -7,11 +7,12 @@ export default applyInterface(
     b: 0,
     a: 1.00,
     h: 0,
-    s: 0,
+    sv: 0,
+    sl: 0,
     v: 0,
     l: 0,
     hex: '#000000',
-    format: 'HSV',
+    format: 'HSL',
     hex_input: '#000000',
   }
 );

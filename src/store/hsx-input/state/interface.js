@@ -5,7 +5,8 @@ export default initialState => {
 
   state.PropTypes = {
     h_input: PropTypes.number,
-    s_input: PropTypes.number,
+    sv_input: PropTypes.number,
+    sl_input: PropTypes.number,
     l_input: PropTypes.number,
     v_input: PropTypes.number,
   };

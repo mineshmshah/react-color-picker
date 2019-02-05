@@ -7,9 +7,16 @@ export const updateHInputValue = value =>  (
   }
 );
 
-export const updateSInputValue = value =>  (
+export const updateSVInputValue = value =>  (
   {
-    type: rgbInputTypes.UPDATE_S_INPUT,
+    type: rgbInputTypes.UPDATE_SV_INPUT,
+    value
+  }
+);
+
+export const updateSLInputValue = value =>  (
+  {
+    type: rgbInputTypes.UPDATE_SL_INPUT,
     value
   }
 );

@@ -50,7 +50,7 @@ class HueSlider extends Component {
     return(
       <AlphaSliderComponent>
         <SliderBoxAlphaLayer>
-          <SliderBox hue={h} sat={s} l={l} areaWidth={areaWidth} onMouseDown={e=>this.mouseDownEvent(e)} >
+          <SliderBox hue={h} sat={s} light={l} areaWidth={areaWidth} onMouseDown={e=>this.mouseDownEvent(e)} >
             <PickerSlider sliderX={position}/>
           </SliderBox>
         </SliderBoxAlphaLayer>

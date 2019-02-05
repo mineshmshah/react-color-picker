@@ -19,16 +19,18 @@ class HSXComponent extends Component {
   }
 
   updateInputValues (prevProps){
-    const {h, s, l ,v} = this.props;
-    const {updateHInputValue, updateSInputValue, updateLInputValue, updateVInputValue} = this.props.hsxInputActions;
+    const {h, sv, sl, l ,v} = this.props;
+    const {updateHInputValue, updateSVInputValue, updateSLInputValue, updateLInputValue, updateVInputValue} = this.props.hsxInputActions;
     if(prevProps){
       if(this.props.h !== prevProps.h) updateHInputValue(h);
-      if(this.props.s !== prevProps.s) updateSInputValue(s);
+      if(this.props.sv !== prevProps.sv) updateSVInputValue(sv);
+      if(this.props.sl !== prevProps.sl) updateSLInputValue(sl);
       if(this.props.l !== prevProps.l) updateLInputValue(l);
       if(this.props.v !== prevProps.v) updateVInputValue(v);
     } else {
       updateHInputValue(h);
-      updateSInputValue(s);
+      updateSVInputValue(sv);
+      updateSLInputValue(sl);
       updateLInputValue(l);
       updateVInputValue(v);
     }
@@ -36,8 +38,8 @@ class HSXComponent extends Component {
 
 
   render() {
-    const {hInput, sInput, lInput, vInput, format} = this.props;
-    const {updateHInputValue, updateSInputValue, updateLInputValue, updateVInputValue ,validateHSXInput} = this.props.hsxInputActions;
+    const {hInput, svInput, slInput, lInput, vInput, format} = this.props;
+    const {updateHInputValue, updateSVInputValue, updateSLInputValue, updateLInputValue, updateVInputValue ,validateHSXInput} = this.props.hsxInputActions;
     const hsvFormat = format === 'HSV';
     return(
       <InputComponent>
@@ -51,12 +53,12 @@ class HSXComponent extends Component {
           />
         </InputBox>
         <InputBox>
-          <Label htmlFor="sInput">S</Label>
+          <Label htmlFor={hsvFormat ? 'svInput' : 'slInput'}>S</Label>
           <NumericalInput
-            id='sInput'
-            value={sInput}
-            onChange={event => updateSInputValue(event.target.value)}
-            onBlur={()=> validateHSXInput('s',0, 100)}
+            id={hsvFormat ? 'svInput' : 'slInput'}
+            value={hsvFormat ? svInput : slInput}
+            onChange={event => hsvFormat ? updateSVInputValue(event.target.value) : updateSLInputValue(event.target.value)}
+            onBlur={()=> hsvFormat ? validateHSXInput('sv',0, 100) : validateHSXInput('sl',0, 100)}
           />
         </InputBox>
         <InputBox>
@@ -78,14 +80,19 @@ export default store(HSXComponent)
 HSXComponent.propTypes ={
   hsxInputActions: PropTypes.objectOf(PropTypes.func),
   h: PropTypes.number,
-  s: PropTypes.number,
+  sv: PropTypes.number,
+  sl: PropTypes.number,
   l: PropTypes.number,
   v: PropTypes.number,
   hInput:  PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
   ]),
-  sInput: PropTypes.oneOfType([
+  svInput: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
+  slInput: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
   ]),
@@ -103,12 +110,14 @@ HSXComponent.propTypes ={
 HSXComponent.defaultProps ={
   hsxInputActions: {},
   h: 0,
-  s: 0,
+  sv: 0,
+  sl:0,
   l: 0,
   v: 0,
   hInput: 0,
-  sInput: 0,
+  svInput: 0,
+  slInput: 0,
   lInput: 0,
   vInput: 0,
-  format: 'HSV'
+  format: 'HSL'
 };

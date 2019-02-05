@@ -6,7 +6,7 @@ class PickerArea extends Component {
   constructor(props){
     super(props)
     this.state = {
-      format: 'HSV',
+      format: 'HSL',
       pickerPosition: {
         x:'45%',
         y:'45%'
