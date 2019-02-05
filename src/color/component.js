@@ -42,6 +42,9 @@ const Color =  ({
     />
     <AlphaSlider
       {...{h}}
+      {...{s}}
+      {...{l}}
+      {...{a}}
       {...{actions}}
       areaWidth={200}
     />

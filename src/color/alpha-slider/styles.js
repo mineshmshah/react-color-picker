@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import img from '../../assets/alpha.png'
 
-const HueSliderComponent = styled.div`
+const AlphaSliderComponent = styled.div`
   display: flex;
   justify-content: start;
 `;
 
 const  SliderBoxAlphaLayer = styled.div`
-	width: ${({areaWidth})=> `${areaWidth}px`};
+	width: auto;
 	margin: 5px;
 	float: left;
 	background: url(${img});
@@ -32,7 +32,7 @@ const PickerSlider = styled.div`
 `;
 
 export {
-  HueSliderComponent,
+  AlphaSliderComponent,
   SliderBox,
   PickerSlider,
   SliderBoxAlphaLayer

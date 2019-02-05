@@ -2,19 +2,19 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 
 import {
-  updateHueSliderPosition
-} from '../../../store/hue-slider/actions/creators'
+  updateAlphaSliderPosition
+} from '../../../store/alpha-slider/actions/creators'
 
 function mapStateToProps (state) {
   return{
-    position: state.hue.position
+    position: state.alpha.position
   }
 }
 
 function mapDispatchToProps (dispatch){
   return {
-    hueSliderActions: bindActionCreators({
-      updateHueSliderPosition
+    alphaSliderActions: bindActionCreators({
+      updateAlphaSliderPosition
     },
     dispatch
     )
