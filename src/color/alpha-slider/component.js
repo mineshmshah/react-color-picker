@@ -46,11 +46,11 @@ class HueSlider extends Component {
   }
 
   render() {
-    const {position, areaWidth,h, s, l} = this.props;
+    const {position, areaWidth,h, sl, l} = this.props;
     return(
       <AlphaSliderComponent>
         <SliderBoxAlphaLayer>
-          <SliderBox hue={h} sat={s} light={l} areaWidth={areaWidth} onMouseDown={e=>this.mouseDownEvent(e)} >
+          <SliderBox hue={h} sat={sl} light={l} areaWidth={areaWidth} onMouseDown={e=>this.mouseDownEvent(e)} >
             <PickerSlider sliderX={position}/>
           </SliderBox>
         </SliderBoxAlphaLayer>
@@ -66,8 +66,9 @@ HueSlider.propTypes = {
   alphaSliderActions: PropTypes.objectOf(PropTypes.func),
   actions: PropTypes.objectOf(PropTypes.func),
   h: PropTypes.number,
-  s: PropTypes.number,
+  sl: PropTypes.number,
   l: PropTypes.number,
+  a: PropTypes.number,
   areaWidth:PropTypes.number,
   position:PropTypes.number,
 };
@@ -78,6 +79,7 @@ HueSlider.defaultProps = {
   h: 0,
   s: 100,
   l: 50,
+  a: 1.00,
   areaWidth:198,
   position:0,
 };
