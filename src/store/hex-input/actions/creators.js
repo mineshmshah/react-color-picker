@@ -9,7 +9,6 @@ export const updateHexInputValue = value =>  (
 
 export const validateHexInput = () => (
   {
-    type: hexInputTypes.VALIDATE_HEX_INPUT,
-    value
+    type: hexInputTypes.VALIDATE_HEX_INPUT
   }
 );

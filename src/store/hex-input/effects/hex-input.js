@@ -21,6 +21,7 @@ function * validateHexInput () {
       type: colorTypes.UPDATE_HEX,
       value: `#${inputValue}`
     });
+
   } else {
     yield put({
       type: hexInputTypes.UPDATE_HEX_INPUT,

@@ -7,9 +7,10 @@ import HSXButton from './hsx-button'
 import HueSlider from './hue-slider'
 import AlphaSlider from './alpha-slider'
 import store from './enhancer/connect'
+import HexInput from './hex-Input'
 
 const Color =  ({
-  r, g, b, a, h, sl, sv, l, v, actions, format
+  r, g, b, a, h, sl, sv, l, v, hex, actions, format
 }) =>(
   <div>
     <PickerArea/>
@@ -48,6 +49,10 @@ const Color =  ({
       {...{a}}
       {...{actions}}
       areaWidth={200}
+    />
+    <HexInput
+      {...{hex}}
+      {...{actions}}
     />
   </div>
 )

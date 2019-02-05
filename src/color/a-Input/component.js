@@ -39,7 +39,7 @@ class AComponent extends Component {
             id='aInput'
             value={aInput}
             onChange={event => updateAInputValue(event.target.value)}
-            onBlur={()=> validateAInput('a')}
+            onBlur={()=> validateAInput()}
           />
         </InputBox>
 

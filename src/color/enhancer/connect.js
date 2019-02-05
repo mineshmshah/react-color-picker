@@ -26,6 +26,7 @@ function mapStateToProps(state) {
     l: state.color.l,
     v: state.color.v,
     a: state.color.a,
+    hex: state.color.hex,
     format: state.color.format
   }
 }

@@ -17,6 +17,7 @@ const Button = styled.div`
   justify-content: center;
   background-color: ${({formatSelected}) => formatSelected  ? '#a9b5c7':'white'};
   cursor: pointer;
+  text-align: center;
 `
 
 export {
