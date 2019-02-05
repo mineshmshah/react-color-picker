@@ -76,8 +76,8 @@ HueSlider.defaultProps = {
   alphaSliderActions: {},
   actions: {},
   h: 0,
-  s:0,
-  l: 0,
+  s: 100,
+  l: 50,
   areaWidth:198,
   position:0,
 };

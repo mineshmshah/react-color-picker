@@ -9,7 +9,7 @@ import AlphaSlider from './alpha-slider'
 import store from './enhancer/connect'
 
 const Color =  ({
-  r, g, b, a, h, sl, sv, l, v, aInput, actions, format
+  r, g, b, a, h, sl, sv, l, v, actions, format
 }) =>(
   <div>
     <PickerArea/>

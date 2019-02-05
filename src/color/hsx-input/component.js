@@ -110,14 +110,14 @@ HSXComponent.propTypes ={
 HSXComponent.defaultProps ={
   hsxInputActions: {},
   h: 0,
-  sv: 0,
-  sl:0,
-  l: 0,
-  v: 0,
+  sv: 100,
+  sl:100,
+  l: 50,
+  v: 100,
   hInput: 0,
-  svInput: 0,
-  slInput: 0,
-  lInput: 0,
-  vInput: 0,
+  svInput: 100,
+  slInput: 100,
+  lInput: 50,
+  vInput: 100,
   format: 'HSL'
 };

@@ -92,10 +92,10 @@ RGBComponent.propTypes ={
 
 RGBComponent.defaultProps ={
   rgbInputActions: {},
-  r: 0,
+  r: 255,
   g: 0,
   b: 0,
-  rInput: 0,
+  rInput: 255,
   gInput: 0,
   bInput: 0,
 }
