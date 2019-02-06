@@ -2,7 +2,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 
 import {
-  updateHueSliderPosition
+  updateHueSliderPosition,
+  updateColorsWithHueSlider
 } from '../../../store/hue-slider/actions/creators'
 
 function mapStateToProps (state) {
@@ -14,7 +15,8 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch){
   return {
     hueSliderActions: bindActionCreators({
-      updateHueSliderPosition
+      updateHueSliderPosition,
+      updateColorsWithHueSlider
     },
     dispatch
     )
