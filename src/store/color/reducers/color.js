@@ -75,4 +75,12 @@ export default{
       l: FinalLightness
     }
   ),
+  [colorTypes.UPDATE_HSV_COMBO] : (state, {FinalHue, FinalSaturation, FinalValue}) => (
+    {
+      ...state,
+      h: FinalHue,
+      sv: FinalSaturation,
+      v: FinalValue
+    }
+  ),
 }

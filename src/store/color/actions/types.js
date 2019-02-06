@@ -18,6 +18,8 @@ const UPDATE_FORMAT = 'UPDATE_FORMAT'
 // Update Full values
 
 const UPDATE_HSL_COMBO = 'UPDATE_HSL_COMBO'
+const UPDATE_HSV_COMBO = 'UPDATE_HSV_COMBO'
+
 
 export default {
   UPDATE_R,
@@ -31,5 +33,6 @@ export default {
   UPDATE_V,
   UPDATE_HEX,
   UPDATE_FORMAT,
-  UPDATE_HSL_COMBO
+  UPDATE_HSL_COMBO,
+  UPDATE_HSV_COMBO
 }

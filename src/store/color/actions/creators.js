@@ -80,12 +80,3 @@ export const updateFormat = value =>  (
     value
   }
 );
-
-export const updateHSLCombo = (FinalHue, FinalSaturation, FinalLightness) =>  (
-  {
-    type: colorTypes.UPDATE_HSL_COMBO,
-    FinalHue,
-    FinalSaturation,
-    FinalLightness
-  }
-);
