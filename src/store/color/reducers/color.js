@@ -67,4 +67,12 @@ export default{
       format: value
     }
   ),
+  [colorTypes.UPDATE_HSL_COMBO] : (state, {FinalHue, FinalSaturation, FinalLightness}) => (
+    {
+      ...state,
+      h: FinalHue,
+      sl: FinalSaturation,
+      l: FinalLightness
+    }
+  ),
 }
