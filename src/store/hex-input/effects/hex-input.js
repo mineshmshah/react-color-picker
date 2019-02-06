@@ -1,6 +1,8 @@
 import {takeEvery, put, select} from 'redux-saga/effects'
 import hexInputTypes from '../actions/types'
 import colorTypes from '../../color/actions/types'
+import { RGBtoHSV } from "../../../utils/RGBtoHSV";
+import { RGBtoHSL } from "../../../utils/RGBtoHSL";
 
 function * validateHexInput () {
 
@@ -17,9 +19,27 @@ function * validateHexInput () {
     if (inputValue.length === 3)
       inputValue = inputValue.replace(/([0-9A-F])([0-9A-F])([0-9A-F])/i,'$1$1$2$2$3$3');
 
+    const FinalRed = Number.parseInt(inputValue.substr(0, 2), 16);
+    const FinalGreen = Number.parseInt(inputValue.substr(2, 2), 16);
+    const FinalBlue = Number.parseInt(inputValue.substr(4, 2), 16);
+    const newRGB = { FinalRed, FinalGreen, FinalBlue };
+    const newHSL = RGBtoHSL(FinalRed, FinalGreen, FinalBlue)
+    const newHSV = RGBtoHSV(FinalRed, FinalGreen, FinalBlue)
     yield put({
       type: colorTypes.UPDATE_HEX,
       value: `#${inputValue}`
+    });
+    yield put({
+      type:colorTypes.UPDATE_RGB_COMBO,
+      ...newRGB
+    });
+    yield put({
+      type:colorTypes.UPDATE_HSL_COMBO,
+      ...newHSL
+    });
+    yield put({
+      type:colorTypes.UPDATE_HSV_COMBO,
+      ...newHSV
     });
 
   } else {

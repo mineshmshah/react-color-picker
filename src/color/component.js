@@ -29,6 +29,10 @@ const Color =  ({
       {...{actions}}
       {...{format}}
     />
+    <HexInput
+      {...{hex}}
+      {...{actions}}
+    />
     <AInput
       {...{a}}
       {...{actions}}
@@ -48,10 +52,6 @@ const Color =  ({
       {...{a}}
       {...{actions}}
       areaWidth={200}
-    />
-    <HexInput
-      {...{hex}}
-      {...{actions}}
     />
   </div>
 )
