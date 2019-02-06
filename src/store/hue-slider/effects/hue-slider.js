@@ -2,6 +2,7 @@ import { takeEvery, put, select } from 'redux-saga/effects'
 import hueSliderTypes from '../actions/types'
 import colorTypes from '../../color/actions/types'
 import { HSLtoRGB } from '../../../utils/HSLtoRGB'
+import { RGBtoHex } from '../../../utils/RGBtoHEX';
 
 function * updateColorsWithHueSlider ({value}) {
 
@@ -18,6 +19,15 @@ function * updateColorsWithHueSlider ({value}) {
     type:colorTypes.UPDATE_RGB_COMBO,
     ...newRGB
   });
+
+  const updatedColors = yield select(state => state.color);
+
+  const { r , g , b } = updatedColors;
+  const newHex = RGBtoHex(r,g,b);
+  yield put({
+    type:colorTypes.UPDATE_HEX,
+    value: newHex
+  })
 }
 
 export default [
