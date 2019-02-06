@@ -15,7 +15,6 @@ function * validateAInput () {
   const validityCheck = typeof(parsedInput) === 'number' && !Number.isNaN(+currentInput)
     && parsedInput >= 0 && parsedInput <= 1;
 
-  debugger;
   if (validityCheck) {
     yield put({
       type: colorTypes.UPDATE_A,

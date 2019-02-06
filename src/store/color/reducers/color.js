@@ -83,4 +83,12 @@ export default{
       v: FinalValue
     }
   ),
+  [colorTypes.UPDATE_RGB_COMBO] : (state, {FinalRed, FinalGreen, FinalBlue}) => (
+    {
+      ...state,
+      r: FinalRed,
+      g: FinalGreen,
+      b: FinalBlue
+    }
+  ),
 }

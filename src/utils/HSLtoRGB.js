@@ -12,9 +12,9 @@ export const HSLtoRGB = (hue, sl, l) => {
   m *= precision;
 
   const setRGB = (r,g,b) => ({
-    FinalRed: r,
-    FinalGreen: g,
-    FinalBlue: b
+    FinalRed: Math.round(r),
+    FinalGreen: Math.round(g),
+    FinalBlue: Math.round(b)
   });
 
   let finalRGB = {};

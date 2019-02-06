@@ -49,7 +49,7 @@ class HSXComponent extends Component {
             id='hInput'
             value={hInput}
             onChange={event => updateHInputValue(event.target.value)}
-            onBlur={()=> validateHSXInput('h',0, 359)}
+            onBlur={()=> validateHSXInput('h',0, 359, format)}
           />
         </InputBox>
         <InputBox>
@@ -58,7 +58,7 @@ class HSXComponent extends Component {
             id={hsvFormat ? 'svInput' : 'slInput'}
             value={hsvFormat ? svInput : slInput}
             onChange={event => hsvFormat ? updateSVInputValue(event.target.value) : updateSLInputValue(event.target.value)}
-            onBlur={()=> hsvFormat ? validateHSXInput('sv',0, 100) : validateHSXInput('sl',0, 100)}
+            onBlur={()=> hsvFormat ? validateHSXInput('sv',0, 100, format) : validateHSXInput('sl',0, 100, format)}
           />
         </InputBox>
         <InputBox>
@@ -67,7 +67,7 @@ class HSXComponent extends Component {
             id={hsvFormat ? 'vInput' : 'lInput'}
             value={hsvFormat ? vInput : lInput}
             onChange={event => hsvFormat ? updateVInputValue(event.target.value) : updateLInputValue(event.target.value)}
-            onBlur={()=> hsvFormat ? validateHSXInput('v',0, 100) : validateHSXInput('l',0, 100)}
+            onBlur={()=> hsvFormat ? validateHSXInput('v',0, 100, format) : validateHSXInput('l',0, 100, format)}
           />
         </InputBox>
       </InputComponent>

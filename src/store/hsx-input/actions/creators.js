@@ -34,11 +34,12 @@ export const updateLInputValue = value =>  (
     value
   }
 );
-export const validateHSXInput = (value, min, max) => (
+export const validateHSXInput = (value, min, max, format) => (
   {
     type:rgbInputTypes.VALIDATE_HSX_INPUT,
     value,
     min,
-    max
+    max,
+    format
   }
 );

@@ -20,9 +20,9 @@ export const RGBtoHSL = (r,g,b) => {
 
   let FinalHue = (60 * hue);
   if (FinalHue < 0) FinalHue += 360;
-  FinalHue = Math.floor(FinalHue)
-  const FinalSaturation = Math.floor(saturation * 100) ;
-  const FinalLightness = Math.floor(lightness * 100) ;
+  FinalHue = Math.round(FinalHue)
+  const FinalSaturation = Math.round(saturation * 100) ;
+  const FinalLightness = Math.round(lightness * 100) ;
 
   return {
     FinalHue,
