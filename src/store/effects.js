@@ -5,6 +5,7 @@ import hsxInputEffects from './hsx-input/effects'
 import aInputEffects from './a-input/effects'
 import hexEffects from './hex-input/effects'
 import hueSliderEffects from './hue-slider/effects'
+import pickerAreaEffects from './picker-area/effects'
 
 export default function * (){
   yield all([
@@ -12,6 +13,6 @@ export default function * (){
     ...hsxInputEffects,
     ...aInputEffects,
     ...hexEffects,
-    ...hueSliderEffects
+    ...hueSliderEffects,
   ])
 }

@@ -4,7 +4,8 @@ export default initialState => {
   const state = initialState;
 
   state.PropTypes = {
-    position: PropTypes.number,
+    positionX: PropTypes.number,
+    positionY: PropTypes.number
   };
 
   return state;

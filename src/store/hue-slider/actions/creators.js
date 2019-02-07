@@ -8,7 +8,7 @@ export const updateHueSliderPosition = (value, areaWidth) => (
   }
 );
 
-export const updateColorsWithHueSlider = (value, areaWidth) => (
+export const updateColorsWithHueSlider = value => (
   {
     type: hueSliderTypes.UPDATE_COLORS_WITH_HUE_SLIDER,
     value

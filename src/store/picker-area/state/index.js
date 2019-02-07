@@ -2,6 +2,7 @@ import applyInterface from './interface';
 
 export default applyInterface(
   {
-    position:0,
+    positionX: 0,
+    positionY: 0
   }
 );

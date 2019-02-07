@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import store from './enhancer/connect'
 import { HueSliderComponent , SliderBox, PickerSlider } from "./styles";
-import { updateColorsWithHueSlider } from "../../store/hue-slider/actions/creators";
 
 
 class HueSlider extends Component {

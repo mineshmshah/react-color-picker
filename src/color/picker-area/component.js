@@ -5,13 +5,22 @@ import store from './enhancer/connect'
 class PickerArea extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      pickerPosition: {
-        x: '45%',
-        y: '45%'
-      }
-    };
     this.handleClick = this.handleClick.bind(this)
+    this.updatePickerPosition = this.updatePickerPosition.bind(this)
+  }
+
+  componentDidMount(){
+    this.updatePickerPosition()
+  }
+
+  componentDidUpdate(prevProps){
+    this.updatePickerPosition()
+  }
+
+  updatePickerPosition(){
+    const {pickerAreaActions, sv,v,sl,l, areaWidth, areaHeight, format} = this.props
+
+    pickerAreaActions.updateColorPickerAreaPosition(sv,v,sl,l, areaWidth, areaHeight, format)
   }
 
   handleClick(e) {
@@ -27,17 +36,11 @@ class PickerArea extends Component {
 
     const newX = X - pickerOffset;
     const newY = Y - pickerOffset;
-    this.setState(() => ({
-      pickerPosition: {
-        x:`${newX}px`,
-        y:`${newY}px`
-      }
-    }))
   }
 
 
   render(){
-    const {r, g, b, a, areaWidth, areaHeight, format} = this.props
+    const {r, g, b, a, areaWidth, areaHeight, format, positionX, positionY} = this.props
     return(
       <PickerAreaComponent
         red={r}
@@ -46,13 +49,14 @@ class PickerArea extends Component {
         areaWidth={areaWidth}
         areaHeight={areaHeight}
         format={format}
-        onClick={this.handleClick}
       >
-        <PickerComponent onClick={null} pickerPosition={this.state.pickerPosition} />
+        <PickerComponent pickerPositionX={positionX} pickerPositionY={positionY}/>
       </PickerAreaComponent>
+
     )
   }
 
 }
 
 export default store(PickerArea)
+
