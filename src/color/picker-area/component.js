@@ -3,22 +3,15 @@ import { PickerAreaComponent, PickerComponent } from './styles'
 import store from './enhancer/connect'
 
 class PickerArea extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      format: 'HSL',
       pickerPosition: {
-        x:'45%',
-        y:'45%'
+        x: '45%',
+        y: '45%'
       }
     };
     this.handleClick = this.handleClick.bind(this)
-    this.updateRGBA= this.updateRGBA.bind(this)
-  }
-
-  updateRGBA(){
-    const color = `hsla(${this.props.h}, 100%, 50%, 1)` || 'red';
-    return color;
   }
 
   handleClick(e) {
@@ -44,10 +37,15 @@ class PickerArea extends Component {
 
 
   render(){
+    const {r, g, b, a, areaWidth, areaHeight, format} = this.props
     return(
       <PickerAreaComponent
-        baseColor={this.updateRGBA()}
-        format={this.props.format}
+        red={r}
+        green={g}
+        blue={b}
+        areaWidth={areaWidth}
+        areaHeight={areaHeight}
+        format={format}
         onClick={this.handleClick}
       >
         <PickerComponent onClick={null} pickerPosition={this.state.pickerPosition} />

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const PickerAreaComponent = styled.div`
-  width: 198px;
-	height: 198px;
+  width: ${({areaWidth}) => `${areaWidth}px`};
+  height: ${({areaHeight}) => `${areaHeight}px`};
 	margin: 5px;
 	border: 1px solid #DDD;
 	position: relative;
@@ -26,7 +26,7 @@ const PickerAreaComponent = styled.div`
   + '\t\t\t\t-o-linear-gradient(left, #FFF 0%, rgba(255, 255, 255, 0) 100%);': '-o-linear-gradient(top, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0) 50%,\n'
   + '\t\t\t\t\t\t\t\t\thsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 100%),\n'
   + '\t\t\t\t-o-linear-gradient(left, hsl(0, 0%, 50%) 0%, hsla(0, 0%, 50%, 0) 100%);'};
-  background-color: ${({baseColor}) => baseColor || '#F00'}
+  background-color: ${({red, green,blue}) => `rgba(${red},${green},${blue},1)`}
 `;
 
 const PickerComponent = styled.div`

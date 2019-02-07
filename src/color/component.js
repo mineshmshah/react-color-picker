@@ -13,7 +13,20 @@ const Color =  ({
   r, g, b, a, h, sl, sv, l, v, hex, actions, format
 }) =>(
   <div>
-    <PickerArea/>
+    <PickerArea
+      {...{h}}
+      {...{sl}}
+      {...{sv}}
+      {...{l}}
+      {...{v}}
+      {...{r}}
+      {...{g}}
+      {...{b}}
+      {...{actions}}
+      {...{format}}
+      areaWidth={200}
+      areaHeight={200}
+    />
     <RGBInput
       {...{r}}
       {...{g}}
@@ -54,7 +67,7 @@ const Color =  ({
       areaWidth={200}
     />
   </div>
-)
-
+);
 
 export default store(Color)
+
