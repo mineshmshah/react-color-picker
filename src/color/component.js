@@ -14,17 +14,15 @@ const Color =  ({
 }) =>(
   <div>
     <PickerArea
+      {...{h}}
       {...{sl}}
       {...{sv}}
       {...{l}}
       {...{v}}
-      {...{r}}
-      {...{g}}
-      {...{b}}
       {...{format}}
       {...{actions}}
-      areaWidth={360}
-      areaHeight={360}
+      areaWidth={200}
+      areaHeight={200}
     />
     <RGBInput
       {...{r}}

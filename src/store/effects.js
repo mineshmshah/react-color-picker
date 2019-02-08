@@ -14,5 +14,6 @@ export default function * (){
     ...aInputEffects,
     ...hexEffects,
     ...hueSliderEffects,
+    ...pickerAreaEffects
   ])
 }

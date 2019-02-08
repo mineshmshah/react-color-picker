@@ -1,6 +1,6 @@
-// import pickerAreaEffects from './picker-area';
-//
-//
-// export default [
-//   ...pickerAreaEffects
-// ];
+import pickerAreaEffects from './picker-area';
+
+
+export default [
+  ...pickerAreaEffects
+];

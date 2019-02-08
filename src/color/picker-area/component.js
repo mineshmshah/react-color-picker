@@ -5,7 +5,7 @@ import store from './enhancer/connect'
 class PickerArea extends Component {
   constructor(props) {
     super(props)
-    this.handleClick = this.handleClick.bind(this)
+    this.mouseDownEvent = this.mouseDownEvent.bind(this)
     this.updatePickerPosition = this.updatePickerPosition.bind(this)
   }
 
@@ -13,46 +13,51 @@ class PickerArea extends Component {
     this.updatePickerPosition()
   }
 
-  componentDidUpdate(prevProps){
+  componentDidUpdate(){
     this.updatePickerPosition()
   }
 
   updatePickerPosition(){
     const {pickerAreaActions, sv,v,sl,l, areaWidth, areaHeight, format} = this.props
-
     pickerAreaActions.updateColorPickerAreaPosition(sv,v,sl,l, areaWidth, areaHeight, format)
   }
 
-  handleClick(e) {
-    const pickerOffset = 6;
-    const size = e.currentTarget.clientWidth;
-    let X =e.pageX - e.currentTarget.offsetLeft - 1;
-    let Y =e.pageY - e.currentTarget.offsetTop - 1;
-    if (X > size) X = size;
-    if (Y > size) Y = size;
-    if (X < 0) X = 0;
-    if (Y < 0) Y = 0;
+  updateColorWithPicker(e, pickerAreaOffsetX, pickerAreaOffsetY){
+    const {areaWidth, areaHeight, pickerAreaActions, format} = this.props;
+    let xValue =e.pageX - pickerAreaOffsetX;
+    if (xValue > areaWidth) xValue = areaWidth;
+    if (xValue < 0) xValue = 0;
+    let yValue = e.pageY - pickerAreaOffsetY;
+    if (yValue > areaHeight) yValue = areaHeight
+    if (yValue < 0 ) yValue = 0;
+    const saturation = Math.round((xValue/areaWidth) * 100);
+    const value = Math.round(100 - ((yValue/areaHeight) * 100));
+    pickerAreaActions.updateColorsWithPickerArea(saturation,value,format)
+  }
 
-
-    const newX = X - pickerOffset;
-    const newY = Y - pickerOffset;
+  mouseDownEvent(e) {
+    const pickerAreaOffsetX = e.currentTarget.offsetLeft + 1;
+    const pickerAreaOffsetY = e.currentTarget.offsetTop + 1;
+    this.updateColorWithPicker(e, pickerAreaOffsetX, pickerAreaOffsetY);
+    const PointerUpdater = event => this.updateColorWithPicker(event, pickerAreaOffsetX, pickerAreaOffsetY)
+    document.addEventListener('mousemove',  PointerUpdater) ;
+    document.addEventListener('mouseup', () =>
+      document.removeEventListener('mousemove', PointerUpdater))
   }
 
 
   render(){
-    const {r, g, b, a, areaWidth, areaHeight, format, positionX, positionY} = this.props
+    const {h, sl, l, areaWidth, areaHeight, format, positionX, positionY} = this.props
     return(
       <PickerAreaComponent
-        red={r}
-        green={g}
-        blue={b}
+        hue={h}
         areaWidth={areaWidth}
         areaHeight={areaHeight}
         format={format}
+        onMouseDown={e=>this.mouseDownEvent(e)}
       >
         <PickerComponent pickerPositionX={positionX} pickerPositionY={positionY}/>
       </PickerAreaComponent>
-
     )
   }
 
