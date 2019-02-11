@@ -3,9 +3,9 @@ import hsxInputTypes from '../actions/types'
 import colorTypes from '../../color/actions/types'
 import { HSLtoRGB } from '../../../utils/HSLtoRGB'
 import { HSVtoRGB } from '../../../utils/HSVtoRGB'
-import { RGBtoHSV } from '../../../utils/RGBtoHSV'
-import { RGBtoHSL } from '../../../utils/RGBtoHSL'
-import { RGBtoHex } from '../../../utils/RGBtoHEX';
+import { RGBtoHex } from '../../../utils/RGBtoHEX'
+import { HSVtoHSL } from '../../../utils/HSVtoHSL'
+import { HSLtoHSV } from '../../../utils/HSLtoHSV'
 
 
 function * validateHSXInput ({value, min, max, format}) {
@@ -24,47 +24,45 @@ function * validateHSXInput ({value, min, max, format}) {
       type: colorTypes[[`UPDATE_${value.toUpperCase()}`]],
       value: parsedInput
     });
+
     if (format==='HSL') {
       let currentColors = yield select(state => state.color);
       const { h , sl , l } = currentColors;
-
+      const newHSV = HSLtoHSV(h,sl,l);
       const newRGB = HSLtoRGB(h,sl,l);
-      yield put({
-        type:colorTypes.UPDATE_RGB_COMBO,
-        ...newRGB
-      });
-      currentColors = yield select(state => state.color);
-      const { r , g , b } = currentColors;
-      const newHSV = RGBtoHSV(r,g,b);
-      const newHex = RGBtoHex(r,g,b);
-
       yield put({
         type:colorTypes.UPDATE_HSV_COMBO,
         ...newHSV
       });
       yield put({
+        type:colorTypes.UPDATE_RGB_COMBO,
+        ...newRGB
+      });
+      currentColors = yield select(state => state.color);
+      const { r , g , b } = currentColors;
+      const newHex = RGBtoHex(r,g,b);
+      yield put({
         type:colorTypes.UPDATE_HEX,
         value: newHex
       })
     }
+
     if (format==='HSV') {
       let currentColors = yield select(state => state.color);
       const { h , sv , v } = currentColors;
+      const newHSL = HSVtoHSL(h,sv,v);
       const newRGB = HSVtoRGB(h,sv,v);
-
+      yield put({
+        type:colorTypes.UPDATE_HSL_COMBO,
+        ...newHSL
+      });
       yield put({
         type:colorTypes.UPDATE_RGB_COMBO,
         ...newRGB
       });
       currentColors = yield select(state => state.color);
       const { r , g , b } = currentColors;
-      const newHSL = RGBtoHSL(r,g,b);
       const newHex = RGBtoHex(r,g,b);
-
-      yield put({
-        type:colorTypes.UPDATE_HSL_COMBO,
-        ...newHSL
-      });
       yield put({
         type:colorTypes.UPDATE_HEX,
         value: newHex
