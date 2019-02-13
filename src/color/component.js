@@ -8,6 +8,7 @@ import HueSlider from './hue-slider'
 import AlphaSlider from './alpha-slider'
 import store from './enhancer/connect'
 import HexInput from './hex-Input'
+import CurrentColor from './current-color'
 
 const Color =  ({
   r, g, b, a, h, sl, sv, l, v, hex, actions, format
@@ -62,6 +63,12 @@ const Color =  ({
       {...{a}}
       {...{actions}}
       areaWidth={200}
+    />
+    <CurrentColor
+      {...{h}}
+      {...{sl}}
+      {...{l}}
+      {...{a}}
     />
   </div>
 );
