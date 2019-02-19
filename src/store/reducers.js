@@ -7,6 +7,7 @@ import aInputReducer from './a-input/reducers'
 import alphaSliderReducer from './alpha-slider/reducers'
 import hexInputReducer from './hex-input/reducers'
 import pickerAreaReducer from './picker-area/reducers'
+import hueSliderVerticalReducer from './hue-slider-vertical/reducers'
 
 
 export default combineReducers({
@@ -17,5 +18,6 @@ export default combineReducers({
   hsxInput: hsxInputReducer,
   aInput: aInputReducer,
   hexInput: hexInputReducer,
-  pickerArea: pickerAreaReducer
+  pickerArea: pickerAreaReducer,
+  hueVertical: hueSliderVerticalReducer
 })

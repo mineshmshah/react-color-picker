@@ -5,6 +5,7 @@ import HSXInput from './hsx-input'
 import AInput from './a-Input'
 import HSXButton from './hsx-button'
 import HueSlider from './hue-slider'
+import HueSliderVertical from './hue-slider-vertical'
 import AlphaSlider from './alpha-slider'
 import store from './enhancer/connect'
 import HexInput from './hex-Input'
@@ -24,6 +25,10 @@ const Color =  ({
       {...{actions}}
       areaWidth={200}
       areaHeight={200}
+    />
+    <HueSliderVertical
+      {...{h}}
+      areaHeight={160}
     />
     <RGBInput
       {...{r}}
