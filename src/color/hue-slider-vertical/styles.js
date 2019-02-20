@@ -9,7 +9,7 @@ const HueSliderComponent = styled.div`
 const  SliderBox = styled.div`
 	height: ${({areaHeight})=> `${areaHeight}px`};
 	border-radius: 2px;
-	width: 12px;
+	width: 10px;
 	margin: 5px;
 	float: left;
 	background: -moz-linear-gradient(top, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%,
@@ -23,13 +23,14 @@ const  SliderBox = styled.div`
 `
 
 const PickerSlider = styled.div`
-	height: 2px;
-	width: 100%;
-	border: 1px solid #777;
-	background-color: #FFF;
+	height: 8px;
+	width: 8px;
+	border: 2px solid  #FFFFFF;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 	position: relative;
 	left: -1px;
-	top: ${({ sliderY }) => `${sliderY-1}px`};
+	top: ${({ sliderY }) => `${sliderY-5}px`};
+	border-radius: 50%;
 `;
 
 export {
