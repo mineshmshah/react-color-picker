@@ -28,7 +28,7 @@ const Color =  ({
     />
     <HueSliderVertical
       {...{h}}
-      areaHeight={160}
+      areaHeight={200}
     />
     <RGBInput
       {...{r}}

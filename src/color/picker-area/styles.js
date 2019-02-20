@@ -4,7 +4,7 @@ const PickerAreaComponent = styled.div`
   width: ${({areaWidth}) => `${areaWidth}px`};
   height: ${({areaHeight}) => `${areaHeight}px`};
 	margin: 5px;
-	border: #a9b5c7 1px solid;
+	border-radius: 4px;
 	position: relative;
 	float: left;
 	display: table;
