@@ -4,6 +4,7 @@ import img from '../../assets/alpha.png'
 const AlphaSliderComponent = styled.div`
   display: flex;
   justify-content: start;
+  height: fit-content;
 `;
 
 const  SliderBoxAlphaLayer = styled.div`
@@ -11,7 +12,7 @@ const  SliderBoxAlphaLayer = styled.div`
 	margin: 5px;
 	float: left;
 	background: url(${img});
-`
+`;
 
 const  SliderBox = styled.div`
 	width: ${({areaWidth})=> `${areaWidth}px`};

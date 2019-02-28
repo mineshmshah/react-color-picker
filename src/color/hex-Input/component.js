@@ -34,13 +34,13 @@ class HexComponent extends Component {
     return(
       <InputComponent>
         <InputBox>
-          <Label htmlFor="aInput">Hex</Label>
           <NumericalInput
             id='hexInput'
             value={hexInput}
             onChange={event => updateHexInputValue(event.target.value)}
             onBlur={()=> validateHexInput()}
           />
+          <Label htmlFor="aInput">HEX</Label>
         </InputBox>
 
       </InputComponent>

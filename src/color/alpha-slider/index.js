@@ -1,3 +1,3 @@
-import HueSlider from './component';
+import AlphaSlider from './component';
 
-export default HueSlider;
+export default AlphaSlider;

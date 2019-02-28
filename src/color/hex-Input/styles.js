@@ -1,31 +1,33 @@
 import styled from 'styled-components';
 
-
 const InputComponent = styled.div`
   display: flex;
-  background-color: #edf2f7;
   width: 250px;
   justify-content: center;
+  height: fit-content;
 `
 
 const NumericalInput = styled.input`
-  width: 70px;
-  height: 23px;
+  width: 64px;
+  height: 26px;
   border-radius: 4px;
-  border: #a9b5c7 1px solid;
-  padding: 0 10px;
+  border: #C8D1DE 1px solid;
+  padding: 0 4px;
+  margin-bottom: 4px;
+  text-align: center;
 `;
 
 const Label = styled.label`
   display: flex;
+  justify-content: center;
   font-family: Roboto;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 10px;
   font-style: normal;
   font-stretch: normal;
-  line-height: normal;
+  line-height: 15px;
   letter-spacing: normal;
-  padding-bottom: 5px;
+  text-align: center;
+  color: #A9B5C7;
 `;
 
 const InputBox = styled.div`
@@ -33,6 +35,7 @@ const InputBox = styled.div`
   flex-direction: column;
   padding: 10px;
 `;
+
 
 export {
   NumericalInput,

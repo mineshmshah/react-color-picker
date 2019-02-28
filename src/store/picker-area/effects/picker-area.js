@@ -4,10 +4,8 @@ import colorTypes from '../../color/actions/types'
 import { HSLtoRGB } from '../../../utils/HSLtoRGB'
 import { HSVtoRGB } from '../../../utils/HSVtoRGB'
 import { RGBtoHex } from '../../../utils/RGBtoHEX'
-import { RGBtoHSL } from '../../../utils/RGBtoHSL'
-import { RGBtoHSV } from '../../../utils/RGBtoHSV'
-import { HSLtoHSV } from "../../../utils/HSLtoHSV";
-import { HSVtoHSL } from "../../../utils/HSVtoHSL";
+import { HSLtoHSV } from '../../../utils/HSLtoHSV'
+import { HSVtoHSL } from '../../../utils/HSVtoHSL'
 
 
 function * updateColorsWithPickerArea ({xValue, yValue, format}) {

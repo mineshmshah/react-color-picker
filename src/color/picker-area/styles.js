@@ -3,11 +3,11 @@ import styled from 'styled-components';
 const PickerAreaComponent = styled.div`
   width: ${({areaWidth}) => `${areaWidth}px`};
   height: ${({areaHeight}) => `${areaHeight}px`};
-	margin: 5px;
+  min-width: ${({areaWidth}) => `${areaWidth}px`};
+  min-height: ${({areaHeight}) => `${areaHeight}px`};
+	margin: 10px;
 	border-radius: 4px;
 	position: relative;
-	float: left;
-	display: table;
 
 	background: ${({format}) => format !=='HSL' 
     ? '-moz-linear-gradient(bottom, #000 0%, rgba(0, 0, 0, 0) 100%),\n\t\t\t\t-moz-linear-gradient(left, #FFF 0%, rgba(255, 255, 255, 0) 100%);'

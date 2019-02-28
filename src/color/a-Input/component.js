@@ -34,13 +34,13 @@ class AComponent extends Component {
     return(
       <InputComponent>
         <InputBox>
-          <Label htmlFor="aInput">A</Label>
           <NumericalInput
             id='aInput'
             value={aInput}
             onChange={event => updateAInputValue(event.target.value)}
             onBlur={()=> validateAInput()}
           />
+          <Label htmlFor="aInput">A</Label>
         </InputBox>
 
       </InputComponent>

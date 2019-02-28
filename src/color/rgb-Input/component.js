@@ -38,31 +38,31 @@ class RGBComponent extends Component {
     return(
       <InputComponent>
         <InputBox>
-          <Label htmlFor="rInput">R </Label>
           <NumericalInput
             id='rInput'
             value={rInput}
             onChange={event => updateRInputValue(event.target.value)}
             onBlur={()=> validateRGBInput('r',0, 255)}
           />
+          <Label htmlFor="rInput">R </Label>
         </InputBox>
         <InputBox>
-          <Label htmlFor="gInput">G</Label>
           <NumericalInput
             id='gInput'
             value={gInput}
             onChange={event => updateGInputValue(event.target.value)}
             onBlur={()=> validateRGBInput('g',0, 255)}
           />
+          <Label htmlFor="gInput">G</Label>
         </InputBox>
         <InputBox>
-          <Label htmlFor="bInput">B</Label>
           <NumericalInput
             id='bInput'
             value={bInput}
             onChange={event => updateBInputValue(event.target.value)}
             onBlur={()=> validateRGBInput('b',0, 255)}
           />
+          <Label htmlFor="bInput">B</Label>
         </InputBox>
       </InputComponent>
     )

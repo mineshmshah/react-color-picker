@@ -7,14 +7,17 @@ import HSXButton from './hsx-button'
 import HueSlider from './hue-slider'
 import HueSliderVertical from './hue-slider-vertical'
 import AlphaSlider from './alpha-slider'
+import AlphaSliderVertical from './alpha-slider-vertical'
 import store from './enhancer/connect'
 import HexInput from './hex-Input'
 import CurrentColor from './current-color'
 
+import { Container } from './styles';
+
 const Color =  ({
   r, g, b, a, h, sl, sv, l, v, hex, actions, format
 }) =>(
-  <div>
+  <Container>
     <PickerArea
       {...{h}}
       {...{sl}}
@@ -28,6 +31,14 @@ const Color =  ({
     />
     <HueSliderVertical
       {...{h}}
+      areaHeight={200}
+    />
+    <AlphaSliderVertical
+      {...{h}}
+      {...{sl}}
+      {...{l}}
+      {...{a}}
+      {...{actions}}
       areaHeight={200}
     />
     <RGBInput
@@ -75,7 +86,7 @@ const Color =  ({
       {...{l}}
       {...{a}}
     />
-  </div>
+  </Container>
 );
 
 export default store(Color)

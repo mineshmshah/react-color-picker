@@ -44,31 +44,31 @@ class HSXComponent extends Component {
     return(
       <InputComponent>
         <InputBox>
-          <Label htmlFor="hInput">H </Label>
           <NumericalInput
             id='hInput'
             value={hInput}
             onChange={event => updateHInputValue(event.target.value)}
             onBlur={()=> validateHSXInput('h',0, 359, format)}
           />
+          <Label htmlFor="hInput">H </Label>
         </InputBox>
         <InputBox>
-          <Label htmlFor={hsvFormat ? 'svInput' : 'slInput'}>S</Label>
           <NumericalInput
             id={hsvFormat ? 'svInput' : 'slInput'}
             value={hsvFormat ? svInput : slInput}
             onChange={event => hsvFormat ? updateSVInputValue(event.target.value) : updateSLInputValue(event.target.value)}
             onBlur={()=> hsvFormat ? validateHSXInput('sv',0, 100, format) : validateHSXInput('sl',0, 100, format)}
           />
+          <Label htmlFor={hsvFormat ? 'svInput' : 'slInput'}>S</Label>
         </InputBox>
         <InputBox>
-          <Label htmlFor={hsvFormat ? 'vInput' : 'lInput'}>{hsvFormat ? 'V' : 'L'}</Label>
           <NumericalInput
             id={hsvFormat ? 'vInput' : 'lInput'}
             value={hsvFormat ? vInput : lInput}
             onChange={event => hsvFormat ? updateVInputValue(event.target.value) : updateLInputValue(event.target.value)}
             onBlur={()=> hsvFormat ? validateHSXInput('v',0, 100, format) : validateHSXInput('l',0, 100, format)}
           />
+          <Label htmlFor={hsvFormat ? 'vInput' : 'lInput'}>{hsvFormat ? 'V' : 'L'}</Label>
         </InputBox>
       </InputComponent>
     )

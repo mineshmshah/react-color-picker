@@ -12,6 +12,6 @@ export default applyInterface(
     v: 100,
     l: 50,
     hex: '#FF0000',
-    format: 'HSL',
+    format: 'HSV',
   }
 );
