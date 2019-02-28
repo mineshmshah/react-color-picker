@@ -1,16 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import { FullColorSection, AlphaSection, CurrentColorComponent, Mask } from'./styles'
+import { Container, FullColorSection, AlphaSection, CurrentColorComponent, Mask, Label } from'./styles'
 
 export const CurrentColor = ({h,sl,l,a}) => (
-  <CurrentColorComponent >
-    <AlphaSection>
-      <Mask hue={h} sat={sl} light={l} alpha={a}/>
-    </AlphaSection>
-    <FullColorSection>
-      <Mask hue={h} sat={sl} light={l} alpha={a}/>
-    </FullColorSection>
-  </CurrentColorComponent>
+  <Container>
+    <Label>
+      PREVIEW
+    </Label>
+    <CurrentColorComponent >
+      <AlphaSection>
+        <Mask hue={h} sat={sl} light={l} alpha={a}/>
+      </AlphaSection>
+      <FullColorSection>
+        <Mask hue={h} sat={sl} light={l} alpha={a}/>
+      </FullColorSection>
+    </CurrentColorComponent>
+  </Container>
 );
 
 export default CurrentColor

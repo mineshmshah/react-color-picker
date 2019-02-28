@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const HueSliderComponent = styled.div`
   display: flex;
   justify-content: start;
-  margin: 10px;
+  margin: 7px;
 `;
 
 const  SliderBox = styled.div`

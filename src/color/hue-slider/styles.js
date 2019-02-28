@@ -3,13 +3,15 @@ import styled from 'styled-components';
 const HueSliderComponent = styled.div`
   display: flex;
   justify-content: start;
+  margin: 0 auto;
 `;
 
 const  SliderBox = styled.div`
 	width: ${({areaWidth})=> `${areaWidth}px`};
-	height: 28px;
+	height: 8px;
 	margin: 5px;
 	float: left;
+	border-radius: 2px;
 	background: -moz-linear-gradient(left, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%,
 				#00F 66.66%, #F0F 83.33%, #F00 100%);
 	background: -webkit-linear-gradient(left, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%,

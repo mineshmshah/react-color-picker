@@ -5,6 +5,7 @@ const AlphaSliderComponent = styled.div`
   display: flex;
   justify-content: start;
   height: fit-content;
+  margin: 0 auto;
 `;
 
 const  SliderBoxAlphaLayer = styled.div`
@@ -16,9 +17,10 @@ const  SliderBoxAlphaLayer = styled.div`
 
 const  SliderBox = styled.div`
 	width: ${({areaWidth})=> `${areaWidth}px`};
-	height: 28px;
+	height: 8px;
 	float: left;
 	background: url(${img});
+	border-radius: 2px;
 	background: ${({hue,sat,light})=>`linear-gradient(to right, hsla(${hue},${sat}%,${light}%,0) 0%, hsla(${hue},${sat}%,${light}%,1) 100%)`};
 `
 

@@ -5,7 +5,7 @@ const PickerAreaComponent = styled.div`
   height: ${({areaHeight}) => `${areaHeight}px`};
   min-width: ${({areaWidth}) => `${areaWidth}px`};
   min-height: ${({areaHeight}) => `${areaHeight}px`};
-	margin: 10px;
+	margin: 7px;
 	border-radius: 4px;
 	position: relative;
 
@@ -30,23 +30,15 @@ const PickerAreaComponent = styled.div`
 `;
 
 const PickerComponent = styled.div`
-  width: 10px;
-	height: 10px;
+  width: 8px;
+	height: 8px;
 	border-radius: 50%;
-	border: 1px solid #FFF;
+	border: 2px solid #FFFFFF;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 	position: absolute;
 	left: ${({pickerPositionX}) => `${pickerPositionX}px` || '45%' };
 	top: ${({pickerPositionY}) => `${pickerPositionY}px` || '45%' };
 	display: flex;
-	
-	::before {
-		width: 8px;
-    height: 8px;
-    content: "";
-    position: absolute;
-    border: 1px solid #999;
-    border-radius: 50%;
-	}
 `;
 
 export {

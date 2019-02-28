@@ -5,7 +5,7 @@ const AlphaSliderComponent = styled.div`
   display: flex;
   justify-content: start;
   height: fit-content;
-  margin: 10px
+  margin: 7px
 `;
 
 const  SliderBoxAlphaLayer = styled.div`

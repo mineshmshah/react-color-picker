@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const InputComponent = styled.div`
   display: flex;
-  width: 250px;
   justify-content: center;
   height: fit-content;
 `
@@ -34,7 +33,7 @@ const Label = styled.label`
 const InputBox = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 5px;
 `;
 
 export {
