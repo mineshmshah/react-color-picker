@@ -32,8 +32,8 @@ function * validateHexInput () {
     const newAlpha = (hexValue / 255).toFixed(2);
 
     const newRGB = { FinalRed, FinalGreen, FinalBlue };
-    const newHSL = RGBtoHSL(FinalRed, FinalGreen, FinalBlue)
-    const newHSV = RGBtoHSV(FinalRed, FinalGreen, FinalBlue)
+    const newHSL = RGBtoHSL(FinalRed, FinalGreen, FinalBlue);
+    const newHSV = RGBtoHSV(FinalRed, FinalGreen, FinalBlue);
     yield put({
       type: colorTypes.UPDATE_HEX,
       value: `#${inputValue}`

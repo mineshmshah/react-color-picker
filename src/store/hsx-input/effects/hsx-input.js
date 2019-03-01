@@ -39,8 +39,9 @@ function * validateHSXInput ({value, min, max, format}) {
         ...newRGB
       });
       currentColors = yield select(state => state.color);
-      const { r , g , b } = currentColors;
-      const newHex = RGBtoHex(r,g,b);
+      const { r , g , b, hex } = currentColors;
+      const hexAlpha = hex.slice(7,9);
+      const newHex = RGBtoHex(r,g,b, hexAlpha);
       yield put({
         type:colorTypes.UPDATE_HEX,
         value: newHex
@@ -61,8 +62,9 @@ function * validateHSXInput ({value, min, max, format}) {
         ...newRGB
       });
       currentColors = yield select(state => state.color);
-      const { r , g , b } = currentColors;
-      const newHex = RGBtoHex(r,g,b);
+      const { r , g , b, hex } = currentColors;
+      const hexAlpha = hex.slice(7,9);
+      const newHex = RGBtoHex(r,g,b, hexAlpha);
       yield put({
         type:colorTypes.UPDATE_HEX,
         value: newHex

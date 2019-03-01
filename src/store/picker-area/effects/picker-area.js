@@ -35,9 +35,9 @@ function * updateColorsWithPickerArea ({xValue, yValue, format}) {
 
     const updatedColors = yield select(state => state.color);
 
-    const { r , g , b } = updatedColors;
-
-    const newHex = RGBtoHex(r,g,b);
+    const { r , g , b, hex } = updatedColors;
+    const hexAlpha = hex.slice(7,9);
+    const newHex = RGBtoHex(r,g,b, hexAlpha);
 
     yield put({
       type:colorTypes.UPDATE_HEX,
@@ -69,9 +69,9 @@ function * updateColorsWithPickerArea ({xValue, yValue, format}) {
 
     const updatedColors = yield select(state => state.color);
 
-    const { r , g , b } = updatedColors;
-
-    const newHex = RGBtoHex(r,g,b);
+    const { r , g , b, hex } = updatedColors;
+    const hexAlpha = hex.slice(7,9);
+    const newHex = RGBtoHex(r,g,b, hexAlpha);
     yield put({
       type:colorTypes.UPDATE_HEX,
       value: newHex
