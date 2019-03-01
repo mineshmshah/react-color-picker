@@ -7,3 +7,11 @@ export const updateAlphaSliderPosition = (value, areaWidth) => (
     areaWidth
   }
 );
+
+export const validateAlphaValueWithSlider = value => (
+  {
+    type: alphaSliderTypes.VALIDATE_ALPHA_VALUE_WITH_SLIDER,
+    value
+  }
+);
+

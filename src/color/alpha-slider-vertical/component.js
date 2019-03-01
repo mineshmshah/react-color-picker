@@ -26,13 +26,13 @@ class AlphaSlider extends Component {
   }
 
   updateAValueWithSlider(e, sliderAreaOffset){
-    const {areaHeight, actions} = this.props;
+    const {areaHeight, alphaSliderVerticalActions} = this.props;
     let yValue =areaHeight - (e.pageY - sliderAreaOffset);
     if (yValue > areaHeight) yValue = areaHeight;
     if (yValue < 0) yValue = 0;
 
     const alpha =(yValue/areaHeight).toFixed(2);
-    actions.updateAValue(alpha);
+    alphaSliderVerticalActions.validateAlphaValueVerticalSlider(alpha);
   }
 
   mouseDownEvent(e){
@@ -62,7 +62,6 @@ export default store(AlphaSlider);
 
 AlphaSlider.propTypes = {
   alphaSliderVerticalActions: PropTypes.objectOf(PropTypes.func),
-  actions: PropTypes.objectOf(PropTypes.func),
   h: PropTypes.number,
   sl: PropTypes.number,
   l: PropTypes.number,
@@ -73,7 +72,6 @@ AlphaSlider.propTypes = {
 
 AlphaSlider.defaultProps = {
   alphaSliderVerticalActions: {},
-  actions: {},
   h: 0,
   sl: 100,
   l: 50,

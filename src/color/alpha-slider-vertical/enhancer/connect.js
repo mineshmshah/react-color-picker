@@ -2,7 +2,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 
 import {
-  updateAlphaSliderPositionVertical
+  updateAlphaSliderPositionVertical,
+  validateAlphaValueVerticalSlider
 } from '../../../store/alpha-slider-vertical/actions/creators'
 
 function mapStateToProps (state) {
@@ -14,7 +15,8 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch){
   return {
     alphaSliderVerticalActions: bindActionCreators({
-      updateAlphaSliderPositionVertical
+      updateAlphaSliderPositionVertical,
+      validateAlphaValueVerticalSlider
     },
     dispatch
     )

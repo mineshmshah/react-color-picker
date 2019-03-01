@@ -46,7 +46,6 @@ const Color =  ({
         {...{sl}}
         {...{l}}
         {...{a}}
-        {...{actions}}
         areaHeight={200}
       />
     </AreaAndSliderContainer>
@@ -91,7 +90,6 @@ const Color =  ({
         {...{sl}}
         {...{l}}
         {...{a}}
-        {...{actions}}
         areaWidth={200}
       />
     </HorizontalSliderContainer>
