@@ -15,5 +15,5 @@ export const HSLtoHSV = (h, s, l) => {
     FinalSaturation,
     FinalValue
   }
-}
+};
 

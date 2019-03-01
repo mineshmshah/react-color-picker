@@ -40,7 +40,7 @@ class HexComponent extends Component {
             onChange={event => updateHexInputValue(event.target.value)}
             onBlur={()=> validateHexInput()}
           />
-          <Label htmlFor="aInput">HEX</Label>
+          <Label htmlFor="aInput">HEXA</Label>
         </InputBox>
 
       </InputComponent>

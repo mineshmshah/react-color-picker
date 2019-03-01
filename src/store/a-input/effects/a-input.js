@@ -16,6 +16,20 @@ function * validateAInput () {
     && parsedInput >= 0 && parsedInput <= 1;
 
   if (validityCheck) {
+    let hexValue = yield select(state => state.color.hex);
+    const newAlphaHex = Math.round(parsedInput * 255).toString(16).toUpperCase();
+
+    if(parsedInput === 1) {
+      hexValue = hexValue.slice(0,7)
+    } else {
+      hexValue = hexValue.slice(0,7).concat(newAlphaHex)
+    }
+
+    yield put({
+      type:colorTypes.UPDATE_HEX,
+      value: hexValue
+    });
+
     yield put({
       type: colorTypes.UPDATE_A,
       value: parsedInput.toFixed(2)
