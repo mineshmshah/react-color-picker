@@ -47,7 +47,7 @@ class PickerArea extends Component {
 
 
   render(){
-    const {h, sl, l, areaWidth, areaHeight, format, positionX, positionY} = this.props
+    const {h, areaWidth, areaHeight, format, positionX, positionY} = this.props
     return(
       <PickerAreaComponent
         hue={h}

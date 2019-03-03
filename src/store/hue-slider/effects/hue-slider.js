@@ -2,9 +2,7 @@ import { takeEvery, put, select } from 'redux-saga/effects'
 import hueSliderTypes from '../actions/types'
 import colorTypes from '../../color/actions/types'
 import { HSLtoRGB } from '../../../utils/HSLtoRGB'
-import { RGBtoHex } from '../../../utils/RGBtoHEX';
-import { RGBtoHSL } from "../../../utils/RGBtoHSL";
-import { RGBtoHSV } from "../../../utils/RGBtoHSV";
+import { RGBtoHex } from '../../../utils/RGBtoHEX'
 
 function * updateColorsWithHueSlider ({value}) {
 
