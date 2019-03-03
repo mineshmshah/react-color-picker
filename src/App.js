@@ -16,6 +16,7 @@ class App extends Component {
       <div className="App" style={{backgroundColor:this.state.bg}}>
         <Color
           onChange={({hex})=> this.setState({bg:hex})}
+          color="#00B9FC"
         />
       </div>
     );

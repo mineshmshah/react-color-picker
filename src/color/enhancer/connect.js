@@ -15,6 +15,11 @@ import {
 
 } from '../../store/color/actions/creators'
 
+import {
+  updateHexInputValue,
+  validateHexInput
+} from '../../store/hex-input/actions/creators'
+
 function mapStateToProps(state) {
   return {
     r: state.color.r,
@@ -45,7 +50,15 @@ function mapDispatchToProps (dispatch) {
         updateVValue,
         updateAValue,
         updateFormat,
-
+        updateHexInputValue,
+        validateHexInput
+      },
+      dispatch
+    ),
+    hexActions: bindActionCreators(
+      {
+        updateHexInputValue,
+        validateHexInput
       },
       dispatch
     )

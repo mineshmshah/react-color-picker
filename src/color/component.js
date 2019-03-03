@@ -25,10 +25,12 @@ class Color extends  Component {
   constructor(props) {
     super(props)
     this.handleChange = this.handleChange.bind(this)
+    this.updateColor = this.updateColor.bind(this)
   }
 
   componentDidMount(){
     this.handleChange()
+    this.updateColor()
   }
 
   componentDidUpdate(previousProps) {
@@ -73,6 +75,12 @@ class Color extends  Component {
     onChange(colorObject)
   }
 
+  updateColor() {
+    const { color } = this.props;
+    const { updateHexInputValue, validateHexInput } = this.props.hexActions;
+    updateHexInputValue(color);
+    validateHexInput()
+  }
 
   render(){
     const { r, g, b, a, h, sl, sv, l, v, hex, actions, format } = this.props
