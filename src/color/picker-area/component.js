@@ -76,7 +76,7 @@ PickerArea.propTypes = {
   areaWidth: PropTypes.number,
   areaHeight: PropTypes.number,
   format: PropTypes.string,
-  pickerAreaActions: PropTypes.func,
+  pickerAreaActions: PropTypes.objectOf(PropTypes.func),
   positionX: PropTypes.number,
   positionY: PropTypes.number
 };

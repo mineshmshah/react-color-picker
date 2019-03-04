@@ -12,6 +12,7 @@ import AlphaSliderVertical from './alpha-slider-vertical'
 import store from './enhancer/connect'
 import HexInput from './hex-Input'
 import CurrentColor from './current-color'
+import HueSliderVerticalHooks from './hue-slider-vertical-hooks'
 
 import {
   Container,
@@ -164,6 +165,10 @@ class Color extends  Component {
             {...{a}}
           />
         </PreviewContainer>
+        <HueSliderVerticalHooks
+          {...{h}}
+          areaHeight={200}
+        />
       </Container>
     )
   }

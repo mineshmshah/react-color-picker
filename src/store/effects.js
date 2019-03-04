@@ -9,6 +9,8 @@ import alphaVerticalEffects from './alpha-slider-vertical/effects'
 import alphaSliderEffects from './alpha-slider/effects'
 import hueVerticalEffects from './hue-slider-vertical/effects'
 import pickerAreaEffects from './picker-area/effects'
+import hueVerticalHooksEffects from './hue-slider-vertical-hooks/effects'
+
 
 export default function * (){
   yield all([
@@ -20,6 +22,7 @@ export default function * (){
     ...pickerAreaEffects,
     ...hueVerticalEffects,
     ...alphaVerticalEffects,
-    ...alphaSliderEffects
+    ...alphaSliderEffects,
+    ...hueVerticalHooksEffects
   ])
 }

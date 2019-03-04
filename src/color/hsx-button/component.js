@@ -16,8 +16,8 @@ const HSXButtonComponent=({
 export default HSXButtonComponent
 
 HSXButtonComponent.propTypes = {
-  format: PropTypes.func,
-  actions: PropTypes.func
+  format: PropTypes.string,
+  actions: PropTypes.objectOf(PropTypes.func)
 };
 
 HSXButtonComponent.defaultProps = {
