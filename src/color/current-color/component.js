@@ -21,9 +21,15 @@ export const CurrentColor = ({h,sl,l,a}) => (
 export default CurrentColor
 
 CurrentColor.propTypes ={
-
+  h: PropTypes.number,
+  sl: PropTypes.number,
+  l: PropTypes.number,
+  a: PropTypes.string,
 };
 
 CurrentColor.defaultProps ={
-
+  h: 0,
+  sl:100,
+  l: 50,
+  a: "1.00",
 };

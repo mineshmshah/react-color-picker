@@ -1,4 +1,5 @@
 import React, { Component }  from 'react';
+import PropTypes from 'prop-types'
 import PickerArea from './picker-area'
 import RGBInput from './rgb-Input'
 import HSXInput from './hsx-input'
@@ -23,13 +24,13 @@ import {
 
 class Color extends  Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.handleChange = this.handleChange.bind(this)
     this.updateColor = this.updateColor.bind(this)
   }
 
   componentDidMount(){
-    this.handleChange()
+    this.handleChange();
     this.updateColor()
   }
 
@@ -83,7 +84,7 @@ class Color extends  Component {
   }
 
   render(){
-    const { r, g, b, a, h, sl, sv, l, v, hex, actions, format } = this.props
+    const { r, g, b, a, h, sl, sv, l, v, hex, actions, format } = this.props;
     return (
       <Container>
         <AreaAndSliderContainer>
@@ -169,3 +170,36 @@ class Color extends  Component {
 }
 export default store(Color)
 
+Color.propTypes ={
+  r: PropTypes.number,
+  g: PropTypes.number,
+  b: PropTypes.number,
+  h: PropTypes.number,
+  sv: PropTypes.number,
+  sl: PropTypes.number,
+  l: PropTypes.number,
+  v: PropTypes.number,
+  a: PropTypes.string,
+  hex: PropTypes.string,
+  hexActions: PropTypes.objectOf(PropTypes.func),
+  actions: PropTypes.objectOf(PropTypes.func),
+  format: PropTypes.string,
+  color: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
+};
+
+Color.defaultProps ={
+  r: 255,
+  g: 0,
+  b: 0,
+  h: 0,
+  sv: 100,
+  sl:100,
+  l: 50,
+  v: 100,
+  a: "1.00",
+  hex: "#FF0000",
+  hexActions: {},
+  actions: {},
+  format: 'HSV'
+};

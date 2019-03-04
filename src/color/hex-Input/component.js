@@ -55,6 +55,7 @@ HexComponent.propTypes ={
   hex: PropTypes.string,
   hexInput:  PropTypes.oneOfType([
     PropTypes.string,
+    PropTypes.number,
   ]),
 };
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import { PickerAreaComponent, PickerComponent } from './styles'
 import store from './enhancer/connect'
 
@@ -65,3 +66,31 @@ class PickerArea extends Component {
 
 export default store(PickerArea)
 
+
+PickerArea.propTypes = {
+  h: PropTypes.number,
+  sv: PropTypes.number,
+  sl: PropTypes.number,
+  l: PropTypes.number,
+  v: PropTypes.number,
+  areaWidth: PropTypes.number,
+  areaHeight: PropTypes.number,
+  format: PropTypes.string,
+  pickerAreaActions: PropTypes.func,
+  positionX: PropTypes.number,
+  positionY: PropTypes.number
+};
+
+PickerArea.defaultProps ={
+  h: 0,
+  sv: 100,
+  sl:100,
+  l: 50,
+  v: 100,
+  areaHeight: 200,
+  areaWidth: 200,
+  format: 'HSV',
+  pickerAreaActions: {},
+  positionX: 0,
+  positionY: 0
+};
