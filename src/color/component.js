@@ -2,32 +2,23 @@ import React, { Component }  from 'react';
 import PropTypes from 'prop-types'
 import PickerArea from './picker-area'
 import RGBInput from './rgb-Input'
-import HSXInput from './hsx-input'
 import AInput from './a-Input'
-import HSXButton from './hsx-button'
-import HueSlider from './hue-slider'
 import HueSliderVertical from './hue-slider-vertical'
-import AlphaSlider from './alpha-slider'
 import AlphaSliderVertical from './alpha-slider-vertical'
 import store from './enhancer/connect'
 import HexInput from './hex-Input'
-import CurrentColor from './current-color'
-import HueSliderVerticalHooks from './hue-slider-vertical-hooks'
 
 import {
   Container,
   AreaAndSliderContainer,
-  RGBAHexInputContainer,
-  HSVInputAndButtonContainer,
-  HorizontalSliderContainer,
-  PreviewContainer
+  RGBAHexInputContainer
 } from './styles';
 
 class Color extends  Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this)
-    this.updateColor = this.updateColor.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.updateColor = this.updateColor.bind(this);
   }
 
   componentDidMount(){
@@ -36,23 +27,17 @@ class Color extends  Component {
   }
 
   componentDidUpdate(previousProps) {
-    if (previousProps.r !== this.props.r
-      || previousProps.g !== this.props.g
-      || previousProps.b !== this.props.b
-      || previousProps.a !== this.props.a
-      || previousProps.h !== this.props.h
-      || previousProps.sl !== this.props.sl
-      || previousProps.sv !== this.props.sv
-      || previousProps.l !== this.props.l
-      || previousProps.v !== this.props.v
-      || previousProps.hex !== this.props.hex
-    ) {
-      this.handleChange()
-    }
+
+    const colorHasChanged = ['r', 'g', 'b', 'a', 'h', 'sl', 'sv', 'l', 'v','hex']
+      .some(key =>
+        previousProps[key] !== this.props[key]
+      );
+
+    if (colorHasChanged) this.handleChange()
   }
 
   handleChange(){
-    const {r, g, b, a, h, sl, sv, l, v, hex, onChange} = this.props
+    const {r, g, b, a, h, sl, sv, l, v, hex, onChange} = this.props;
     const colorObject = {
       hex,
       rgba: {
@@ -128,47 +113,6 @@ class Color extends  Component {
             {...{actions}}
           />
         </RGBAHexInputContainer>
-        <HSVInputAndButtonContainer>
-          <HSXInput
-            {...{h}}
-            {...{sl}}
-            {...{sv}}
-            {...{l}}
-            {...{v}}
-            {...{actions}}
-            {...{format}}
-          />
-          <HSXButton
-            {...{format}}
-            {...{actions}}
-          />
-        </HSVInputAndButtonContainer>
-        <HorizontalSliderContainer>
-          <HueSlider
-            {...{h}}
-            areaWidth={200}
-          />
-          <AlphaSlider
-            {...{h}}
-            {...{sl}}
-            {...{l}}
-            {...{a}}
-            areaWidth={200}
-          />
-        </HorizontalSliderContainer>
-
-        <PreviewContainer>
-          <CurrentColor
-            {...{h}}
-            {...{sl}}
-            {...{l}}
-            {...{a}}
-          />
-        </PreviewContainer>
-        <HueSliderVerticalHooks
-          {...{h}}
-          areaHeight={200}
-        />
       </Container>
     )
   }

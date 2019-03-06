@@ -36,19 +36,13 @@ class Color extends  Component {
   }
 
   componentDidUpdate(previousProps) {
-    if (previousProps.r !== this.props.r
-      || previousProps.g !== this.props.g
-      || previousProps.b !== this.props.b
-      || previousProps.a !== this.props.a
-      || previousProps.h !== this.props.h
-      || previousProps.sl !== this.props.sl
-      || previousProps.sv !== this.props.sv
-      || previousProps.l !== this.props.l
-      || previousProps.v !== this.props.v
-      || previousProps.hex !== this.props.hex
-    ) {
-      this.handleChange()
-    }
+
+    const colorHasChanged = ['r', 'g', 'b', 'a', 'h', 'sl', 'sv', 'l', 'v','hex']
+      .some(key =>
+        previousProps[key] !== this.props[key]
+      );
+
+    if (colorHasChanged) this.handleChange()
   }
 
   handleChange(){
