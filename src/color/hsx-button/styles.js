@@ -10,6 +10,7 @@ const Component = styled.div`
 `;
 
 const Button = styled.div`
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   height: 28px;
   width: 64px;
   display: flex;

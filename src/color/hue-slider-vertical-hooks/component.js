@@ -7,7 +7,7 @@ const HueSliderVerticalHooks = ({h, areaHeight, hueSliderVerticalHooksActions}) 
   const [position, setPosition] = useState(0);
 
   useEffect(()=> {
-    const newPosition = (h * areaHeight) /360;
+    const newPosition = (h * areaHeight) /359;
     setPosition(newPosition)
   },
   [h, areaHeight]

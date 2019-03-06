@@ -34,7 +34,7 @@ const PickerSlider = styled.div`
 	position: relative;
 	left: -1px;
 	border-radius: 50%;
-	top: ${({ sliderY }) => `${sliderY-5}px`};
+	top: ${({ sliderY }) => `${sliderY-6}px`};
 `;
 
 export {
