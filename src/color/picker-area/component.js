@@ -31,16 +31,24 @@ class PickerArea extends Component {
     let yValue = e.pageY - pickerAreaOffsetY;
     if (yValue > areaHeight) yValue = areaHeight
     if (yValue < 0 ) yValue = 0;
-    console.log(xValue)
     const saturation = Math.round((xValue/areaWidth) * 100);
     const value = Math.round(100 - ((yValue/areaHeight) * 100));
     pickerAreaActions.updateColorsWithPickerArea(saturation,value,format)
   }
 
   mouseDownEvent(e) {
-    const boundingBox = e.currentTarget.getBoundingClientRect()
-    const pickerAreaOffsetX = boundingBox.left;
-    const pickerAreaOffsetY = boundingBox.top;
+    // This is always relative to one level above to the parent that is absolutely positioned
+    // https://stackoverflow.com/questions/1480133/how-can-i-get-an-objects-absolute-position-on-the-page-in-javascript
+    let currentElement = e.currentTarget;
+    let pickerAreaOffsetX = 0;
+    let pickerAreaOffsetY = 0;
+    do {
+      pickerAreaOffsetX += currentElement.offsetLeft;
+      pickerAreaOffsetY += currentElement.offsetTop;
+      currentElement = currentElement.offsetParent;
+    } while (currentElement);
+    console.log(pickerAreaOffsetX);
+    console.log(pickerAreaOffsetY)
     this.updateColorWithPicker(e, pickerAreaOffsetX, pickerAreaOffsetY);
     const PointerUpdater = event => this.updateColorWithPicker(event, pickerAreaOffsetX, pickerAreaOffsetY);
     document.addEventListener('mousemove',  PointerUpdater) ;

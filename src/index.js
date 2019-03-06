@@ -4,7 +4,10 @@ import AppWithProvider from './AppWithProvider';
 import * as serviceWorker from './serviceWorker';
 
 render(
-  <AppWithProvider />,
+  <div>
+    <AppWithProvider />
+    <AppWithProvider />
+  </div>,
   document.getElementById('root')
 );
 
