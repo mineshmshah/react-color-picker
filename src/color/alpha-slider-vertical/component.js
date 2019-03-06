@@ -36,7 +36,8 @@ class AlphaSlider extends Component {
   }
 
   mouseDownEvent(e){
-    const sliderAreaOffset = e.currentTarget.offsetTop;
+    const boundingBox = e.currentTarget.getBoundingClientRect();
+    const sliderAreaOffset = boundingBox.top;
     this.updateAValueWithSlider(e, sliderAreaOffset);
     const AUpdaterFunction = event => this.updateAValueWithSlider(event, sliderAreaOffset);
     document.addEventListener('mousemove',  AUpdaterFunction) ;

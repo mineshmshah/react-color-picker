@@ -27,7 +27,7 @@ const PickerSlider = styled.div`
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 	position: relative;
 	left: -1px;
-	top: ${({ sliderY }) => `${sliderY-5}px`};
+	top: ${({ sliderY }) => `${sliderY-6}px`};
 	border-radius: 50%;
 `;
 

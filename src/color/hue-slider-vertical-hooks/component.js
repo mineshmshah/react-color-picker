@@ -22,7 +22,8 @@ const HueSliderVerticalHooks = ({h, areaHeight, hueSliderVerticalHooksActions}) 
   };
 
   const mouseDownEvent = e => {
-    const sliderAreaOffset = e.currentTarget.offsetTop;
+    const boundingBox = e.currentTarget.getBoundingClientRect();
+    const sliderAreaOffset = boundingBox.top;
     updateHValueWithSlider(e, sliderAreaOffset);
     const HUpdaterFunction = event => updateHValueWithSlider(event, sliderAreaOffset);
     document.addEventListener('mousemove',  HUpdaterFunction) ;

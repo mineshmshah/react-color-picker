@@ -31,16 +31,18 @@ class PickerArea extends Component {
     let yValue = e.pageY - pickerAreaOffsetY;
     if (yValue > areaHeight) yValue = areaHeight
     if (yValue < 0 ) yValue = 0;
+    console.log(xValue)
     const saturation = Math.round((xValue/areaWidth) * 100);
     const value = Math.round(100 - ((yValue/areaHeight) * 100));
     pickerAreaActions.updateColorsWithPickerArea(saturation,value,format)
   }
 
   mouseDownEvent(e) {
-    const pickerAreaOffsetX = e.currentTarget.offsetLeft + 1;
-    const pickerAreaOffsetY = e.currentTarget.offsetTop + 1;
+    const boundingBox = e.currentTarget.getBoundingClientRect()
+    const pickerAreaOffsetX = boundingBox.left;
+    const pickerAreaOffsetY = boundingBox.top;
     this.updateColorWithPicker(e, pickerAreaOffsetX, pickerAreaOffsetY);
-    const PointerUpdater = event => this.updateColorWithPicker(event, pickerAreaOffsetX, pickerAreaOffsetY)
+    const PointerUpdater = event => this.updateColorWithPicker(event, pickerAreaOffsetX, pickerAreaOffsetY);
     document.addEventListener('mousemove',  PointerUpdater) ;
     document.addEventListener('mouseup', () =>
       document.removeEventListener('mousemove', PointerUpdater))

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as img from '../../assets/alpha.png'
+import img from '../../assets/alpha.png';
 
 const AlphaSliderComponent = styled.div`
   display: flex;

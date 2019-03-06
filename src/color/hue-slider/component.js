@@ -35,7 +35,8 @@ class HueSlider extends Component {
   }
 
   mouseDownEvent(e){
-    const sliderAreaOffset = e.currentTarget.offsetLeft;
+    const boundingBox = e.currentTarget.getBoundingClientRect();
+    const sliderAreaOffset = boundingBox.left;
     this.updateHValueWithSlider(e, sliderAreaOffset);
     const HUpdaterFunction = event => this.updateHValueWithSlider(event, sliderAreaOffset);
     document.addEventListener('mousemove',  HUpdaterFunction) ;
