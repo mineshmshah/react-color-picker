@@ -47,8 +47,6 @@ class PickerArea extends Component {
       pickerAreaOffsetY += currentElement.offsetTop;
       currentElement = currentElement.offsetParent;
     } while (currentElement);
-    console.log(pickerAreaOffsetX);
-    console.log(pickerAreaOffsetY)
     this.updateColorWithPicker(e, pickerAreaOffsetX, pickerAreaOffsetY);
     const PointerUpdater = event => this.updateColorWithPicker(event, pickerAreaOffsetX, pickerAreaOffsetY);
     document.addEventListener('mousemove',  PointerUpdater) ;
