@@ -1,10 +1,18 @@
 import React from 'react';
 import {render} from 'react-dom';
-import AppWithProvider from './AppWithProvider';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 render(
-  <AppWithProvider />,
+  <div>
+    <App color='#FFF' onChange={({hex})=>console.log('App1', hex)}/>
+    <App color='#4458' onChange={({hex})=>console.log('App2', hex)}/>
+    <div>
+      <button onClick={()=>this.setState({button1: !this.state.button})}>Button 1</button>
+    </div>
+    { this.state.button1 &&  <App color='#CCA365' onChange={({hex})=>console.log('App3', hex)} />}
+  </div>
+  ,
   document.getElementById('root')
 );
 

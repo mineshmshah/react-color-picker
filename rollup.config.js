@@ -13,7 +13,7 @@ const extensions = ['.js', '.jsx'];
 const dependencies = Object.keys(pkg.dependencies);
 
 export default {
-  input:  'src/AppWithProvider.js',
+  input:  'src/App.js',
   output:
     {
       file: 'lib/bundle.js',
