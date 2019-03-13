@@ -4,9 +4,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 render(
-  <div>
+  <div style={{display:'flex'}}>
     <App color='#FFF' onChange={({hex})=>console.log('App1', hex)}/>
-    <App color='#4458' onChange={({hex})=>console.log('App2', hex)}/>
   </div>
   ,
   document.getElementById('root')

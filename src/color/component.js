@@ -11,7 +11,9 @@ import HexInput from './hex-Input'
 import {
   Container,
   AreaAndSliderContainer,
-  RGBAHexInputContainer
+  RGBAHexInputContainer,
+  Container2,
+  BlockDivs
 } from './styles';
 
 class Color extends  Component {
@@ -72,48 +74,50 @@ class Color extends  Component {
   render(){
     const { r, g, b, a, h, sl, sv, l, v, hex, actions, format } = this.props;
     return (
-      <Container>
-        <AreaAndSliderContainer>
-          <PickerArea
-            {...{h}}
-            {...{sl}}
-            {...{sv}}
-            {...{l}}
-            {...{v}}
-            {...{format}}
-            {...{actions}}
-            areaWidth={200}
-            areaHeight={200}
-          />
-          <HueSliderVertical
-            {...{h}}
-            areaHeight={200}
-          />
-          <AlphaSliderVertical
-            {...{h}}
-            {...{sl}}
-            {...{l}}
-            {...{a}}
-            areaHeight={200}
-          />
-        </AreaAndSliderContainer>
-        <RGBAHexInputContainer>
-          <HexInput
-            {...{hex}}
-            {...{actions}}
-          />
-          <RGBInput
-            {...{r}}
-            {...{g}}
-            {...{b}}
-            {...{actions}}
-          />
-          <AInput
-            {...{a}}
-            {...{actions}}
-          />
-        </RGBAHexInputContainer>
-      </Container>
+      <Container2>
+        <Container>
+          <AreaAndSliderContainer>
+            <PickerArea
+              {...{h}}
+              {...{sl}}
+              {...{sv}}
+              {...{l}}
+              {...{v}}
+              {...{format}}
+              {...{actions}}
+              areaWidth={200}
+              areaHeight={200}
+            />
+            <HueSliderVertical
+              {...{h}}
+              areaHeight={200}
+            />
+            <AlphaSliderVertical
+              {...{h}}
+              {...{sl}}
+              {...{l}}
+              {...{a}}
+              areaHeight={200}
+            />
+          </AreaAndSliderContainer>
+          <RGBAHexInputContainer>
+            <HexInput
+              {...{hex}}
+              {...{actions}}
+            />
+            <RGBInput
+              {...{r}}
+              {...{g}}
+              {...{b}}
+              {...{actions}}
+            />
+            <AInput
+              {...{a}}
+              {...{actions}}
+            />
+          </RGBAHexInputContainer>
+        </Container>
+      </Container2>
     )
   }
 }
