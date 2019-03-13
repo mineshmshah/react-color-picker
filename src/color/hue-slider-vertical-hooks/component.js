@@ -3,15 +3,30 @@ import PropTypes from 'prop-types'
 import store from './enhancer/connect'
 import { HueSliderComponent , SliderBox, PickerSlider } from "./styles";
 
-const HueSliderVerticalHooks = ({h, areaHeight, hueSliderVerticalHooksActions}) => {
-  const [position, setPosition] = useState(0);
+const positionFunction = (value, length) => (value * length) /359;
 
+const useSliderPosition = (value, length, posFunc) => {
+  const [position, setPosition] = useState(0);
   useEffect(()=> {
-    const newPosition = (h * areaHeight) /359;
+    const newPosition = positionFunction(value,length)
     setPosition(newPosition)
   },
-  [h, areaHeight]
+  [value, length]
   );
+  return position
+};
+
+const HueSliderVerticalHooks = ({h, areaHeight, hueSliderVerticalHooksActions}) => {
+  // const [position, setPosition] = useState(0);
+  //
+  // useEffect(()=> {
+  //   const newPosition = (h * areaHeight) /359;
+  //   setPosition(newPosition)
+  // },
+  // [h, areaHeight]
+  // );
+
+  const position = useSliderPosition(h, areaHeight, positionFunction);
 
   const updateHValueWithSlider = (e, sliderAreaOffset) => {
     let yValue =e.pageY - sliderAreaOffset;
