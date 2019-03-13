@@ -25,10 +25,10 @@ class PickerArea extends Component {
 
   updateColorWithPicker(e, pickerAreaOffsetX, pickerAreaOffsetY){
     const {areaWidth, areaHeight, pickerAreaActions, format} = this.props;
-    let xValue =e.clientX - pickerAreaOffsetX;
+    let xValue =e.clientX + pickerAreaOffsetX;
     if (xValue > areaWidth) xValue = areaWidth;
     if (xValue < 0) xValue = 0;
-    let yValue = e.clientY - pickerAreaOffsetY;
+    let yValue = e.clientY + pickerAreaOffsetY;
     if (yValue > areaHeight) yValue = areaHeight
     if (yValue < 0 ) yValue = 0;
     const saturation = Math.round((xValue/areaWidth) * 100);
@@ -45,8 +45,8 @@ class PickerArea extends Component {
     console.log('scrolly', window.scrollY)
     const boundingbox = currentElement.getBoundingClientRect();
 
-      let pickerAreaOffsetX = boundingbox.left;
-      let pickerAreaOffsetY = boundingbox.top;
+      let pickerAreaOffsetX = currentElement.scrollLeft - boundingbox.left;
+      let pickerAreaOffsetY = currentElement.scrollTop - boundingbox.top;
     // let pickerAreaOffsetX = 0;
     // let pickerAreaOffsetY = 0;
     // do {
