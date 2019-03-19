@@ -1,3 +1,3 @@
-import Color from './component-full-color'
+import Color from './component'
 
 export default Color
