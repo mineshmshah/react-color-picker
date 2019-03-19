@@ -20,7 +20,6 @@ class App extends Component {
           color={this.props.color}
         />
       </Provider>
-
     );
   }
 }

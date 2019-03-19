@@ -5,17 +5,17 @@ import store from './enhancer/connect'
 
 class PickerArea extends Component {
   constructor(props) {
-    super(props)
-    this.mouseDownEvent = this.mouseDownEvent.bind(this)
-    this.updatePickerPosition = this.updatePickerPosition.bind(this)
+    super(props);
+    this.mouseDownEvent = this.mouseDownEvent.bind(this);
+    this.updatePickerPosition = this.updatePickerPosition.bind(this);
   }
 
   componentDidMount(){
-    this.updatePickerPosition()
+    this.updatePickerPosition();
   }
 
   componentDidUpdate(){
-    this.updatePickerPosition()
+    this.updatePickerPosition();
   }
 
   updatePickerPosition(){
@@ -25,11 +25,11 @@ class PickerArea extends Component {
 
   updateColorWithPicker(e, pickerAreaOffsetX, pickerAreaOffsetY){
     const {areaWidth, areaHeight, pickerAreaActions, format} = this.props;
-    let xValue =e.clientX + pickerAreaOffsetX;
+    let xValue = e.clientX + pickerAreaOffsetX;
     if (xValue > areaWidth) xValue = areaWidth;
     if (xValue < 0) xValue = 0;
     let yValue = e.clientY + pickerAreaOffsetY;
-    if (yValue > areaHeight) yValue = areaHeight
+    if (yValue > areaHeight) yValue = areaHeight;
     if (yValue < 0 ) yValue = 0;
     const saturation = Math.round((xValue/areaWidth) * 100);
     const value = Math.round(100 - ((yValue/areaHeight) * 100));
@@ -39,21 +39,13 @@ class PickerArea extends Component {
   mouseDownEvent(e) {
     // This is always relative to one level above to the parent that is absolutely positioned
     // https://stackoverflow.com/questions/1480133/how-can-i-get-an-objects-absolute-position-on-the-page-in-javascript
-    let currentElement = e.currentTarget;
-    console.log('page y',e.pageY)
-    console.log('page offset y', window.pageYOffset)
-    console.log('scrolly', window.scrollY)
-    const boundingbox = currentElement.getBoundingClientRect();
+    const currentElement = e.currentTarget;
 
-    let pickerAreaOffsetX = currentElement.scrollLeft - boundingbox.left;
-    let pickerAreaOffsetY = currentElement.scrollTop - boundingbox.top;
-    // let pickerAreaOffsetX = 0;
-    // let pickerAreaOffsetY = 0;
-    // do {
-    //   pickerAreaOffsetX += currentElement.offsetLeft;
-    //   pickerAreaOffsetY += currentElement.offsetTop;
-    //   currentElement = currentElement.offsetParent;
-    // } while (currentElement);
+    const boundingBox = currentElement.getBoundingClientRect();
+
+    const pickerAreaOffsetX = currentElement.scrollLeft - boundingBox.left;
+    const pickerAreaOffsetY = currentElement.scrollTop - boundingBox.top;
+
     this.updateColorWithPicker(e, pickerAreaOffsetX, pickerAreaOffsetY);
     const PointerUpdater = event => this.updateColorWithPicker(event, pickerAreaOffsetX, pickerAreaOffsetY);
     document.addEventListener('mousemove',  PointerUpdater) ;
@@ -63,7 +55,7 @@ class PickerArea extends Component {
 
 
   render(){
-    const {h, areaWidth, areaHeight, format, positionX, positionY} = this.props
+    const {h, areaWidth, areaHeight, format, positionX, positionY} = this.props;
     return(
       <PickerAreaComponent
         hue={h}

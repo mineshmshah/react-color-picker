@@ -27,7 +27,7 @@ class AlphaSlider extends Component {
 
   updateAValueWithSlider(e, sliderAreaOffset){
     const {areaHeight, alphaSliderVerticalActions} = this.props;
-    let yValue =areaHeight - (e.pageY - sliderAreaOffset);
+    let yValue = areaHeight - (e.clientY + sliderAreaOffset);
     if (yValue > areaHeight) yValue = areaHeight;
     if (yValue < 0) yValue = 0;
 
@@ -36,12 +36,9 @@ class AlphaSlider extends Component {
   }
 
   mouseDownEvent(e){
-    let currentElement = e.currentTarget;
-    let sliderAreaOffset = 0;
-    do {
-      sliderAreaOffset += currentElement.offsetTop;
-      currentElement = currentElement.offsetParent;
-    } while (currentElement);
+    const currentElement = e.currentTarget;
+    const boundingBox = currentElement.getBoundingClientRect();
+    const sliderAreaOffset = currentElement.scrollTop - boundingBox.top;
     this.updateAValueWithSlider(e, sliderAreaOffset);
     const AUpdaterFunction = event => this.updateAValueWithSlider(event, sliderAreaOffset);
     document.addEventListener('mousemove',  AUpdaterFunction) ;

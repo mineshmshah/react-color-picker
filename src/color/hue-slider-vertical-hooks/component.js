@@ -29,7 +29,7 @@ const HueSliderVerticalHooks = ({h, areaHeight, hueSliderVerticalHooksActions}) 
   const position = useSliderPosition(h, areaHeight, positionFunction);
 
   const updateHValueWithSlider = (e, sliderAreaOffset) => {
-    let yValue =e.pageY - sliderAreaOffset;
+    let yValue =e.clientY + sliderAreaOffset;
     if (yValue > areaHeight) yValue = areaHeight;
     if (yValue < 0) yValue = 0;
     const hue = Math.round((yValue/areaHeight) * 359);
@@ -37,12 +37,9 @@ const HueSliderVerticalHooks = ({h, areaHeight, hueSliderVerticalHooksActions}) 
   };
 
   const mouseDownEvent = e => {
-    let currentElement = e.currentTarget;
-    let sliderAreaOffset = 0;
-    do {
-      sliderAreaOffset += currentElement.offsetTop;
-      currentElement = currentElement.offsetParent;
-    } while (currentElement);
+    const currentElement = e.currentTarget;
+    const boundingBox = currentElement.getBoundingClientRect();
+    const sliderAreaOffset = currentElement.scrollTop - boundingBox.top;
     updateHValueWithSlider(e, sliderAreaOffset);
     const HUpdaterFunction = event => updateHValueWithSlider(event, sliderAreaOffset);
     document.addEventListener('mousemove',  HUpdaterFunction) ;

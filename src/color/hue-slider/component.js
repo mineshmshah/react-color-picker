@@ -7,27 +7,27 @@ import { HueSliderComponent , SliderBox, PickerSlider } from "./styles";
 class HueSlider extends Component {
 
   constructor(props){
-    super(props)
+    super(props);
     this.updateHueSlider=this.updateHueSlider.bind(this);
-    this.mouseDownEvent = this.mouseDownEvent.bind(this)
+    this.mouseDownEvent = this.mouseDownEvent.bind(this);
   }
 
   componentDidMount(){
-    this.updateHueSlider()
+    this.updateHueSlider();
   }
 
   componentDidUpdate(){
-    this.updateHueSlider()
+    this.updateHueSlider();
   }
 
   updateHueSlider() {
     const {hueSliderActions, h, areaWidth} = this.props;
-    hueSliderActions.updateHueSliderPosition(h,areaWidth)
+    hueSliderActions.updateHueSliderPosition(h,areaWidth);
   }
 
   updateHValueWithSlider(e, sliderAreaOffset){
     const {areaWidth, hueSliderActions} = this.props;
-    let xValue =e.pageX - sliderAreaOffset;
+    let xValue = e.clientX + sliderAreaOffset;
     if (xValue > areaWidth) xValue = areaWidth;
     if (xValue < 0) xValue = 0;
     const hue = Math.round((xValue/areaWidth) * 359);
@@ -35,12 +35,9 @@ class HueSlider extends Component {
   }
 
   mouseDownEvent(e){
-    let currentElement = e.currentTarget;
-    let sliderAreaOffset = 0;
-    do {
-      sliderAreaOffset += currentElement.offsetLeft;
-      currentElement = currentElement.offsetParent;
-    } while (currentElement);
+    const currentElement = e.currentTarget;
+    const boundingBox = currentElement.getBoundingClientRect();
+    const sliderAreaOffset = currentElement.scrollLeft - boundingBox.left;
     this.updateHValueWithSlider(e, sliderAreaOffset);
     const HUpdaterFunction = event => this.updateHValueWithSlider(event, sliderAreaOffset);
     document.addEventListener('mousemove',  HUpdaterFunction) ;

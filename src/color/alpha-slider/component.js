@@ -7,17 +7,17 @@ import { AlphaSliderComponent , SliderBox, PickerSlider, SliderBoxAlphaLayer } f
 class AlphaSlider extends Component {
 
   constructor(props){
-    super(props)
+    super(props);
     this.updateAlphaSlider=this.updateAlphaSlider.bind(this);
-    this.mouseDownEvent = this.mouseDownEvent.bind(this)
+    this.mouseDownEvent = this.mouseDownEvent.bind(this);
   }
 
   componentDidMount(){
-    this.updateAlphaSlider()
+    this.updateAlphaSlider();
   }
 
   componentDidUpdate(){
-    this.updateAlphaSlider()
+    this.updateAlphaSlider();
   }
 
   updateAlphaSlider() {
@@ -27,7 +27,7 @@ class AlphaSlider extends Component {
 
   updateAValueWithSlider(e, sliderAreaOffset){
     const {areaWidth, alphaSliderActions} = this.props;
-    let xValue =e.pageX - sliderAreaOffset;
+    let xValue = e.clientX + sliderAreaOffset;
     if (xValue > areaWidth) xValue = areaWidth;
     if (xValue < 0) xValue = 0;
 
@@ -36,12 +36,9 @@ class AlphaSlider extends Component {
   }
 
   mouseDownEvent(e){
-    let currentElement = e.currentTarget;
-    let sliderAreaOffset = 0;
-    do {
-      sliderAreaOffset += currentElement.offsetLeft;
-      currentElement = currentElement.offsetParent;
-    } while (currentElement);
+    const currentElement = e.currentTarget;
+    const boundingBox = currentElement.getBoundingClientRect();
+    const sliderAreaOffset = currentElement.scrollLeft - boundingBox.left;
     this.updateAValueWithSlider(e, sliderAreaOffset);
     const AUpdaterFunction = event => this.updateAValueWithSlider(event, sliderAreaOffset);
     document.addEventListener('mousemove',  AUpdaterFunction) ;
