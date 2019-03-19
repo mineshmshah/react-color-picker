@@ -17,7 +17,9 @@ function * validateAInput () {
 
   if (validityCheck) {
     let hexValue = yield select(state => state.color.hex);
-    const newAlphaHex = Math.round(parsedInput * 255).toString(16).toUpperCase();
+    const transformedValue = Math.round(parsedInput * 255);
+    let newAlphaHex = transformedValue.toString(16).toUpperCase();
+    if (transformedValue < 16) newAlphaHex = `0${newAlphaHex}`;
 
     if(parsedInput === 1) {
       hexValue = hexValue.slice(0,7)
