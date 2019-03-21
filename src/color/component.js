@@ -27,9 +27,7 @@ class Color extends  Component {
   }
 
   componentDidUpdate(previousProps) {
-    if(previousProps.color !== this.props.color){
-      this.updateColor()
-    }
+    this.updateColor();
     const colorHasChanged = ['r', 'g', 'b', 'a', 'h', 'sl', 'sv', 'l', 'v','hex']
       .some(key =>
         previousProps[key] !== this.props[key]
