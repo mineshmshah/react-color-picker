@@ -1,11 +1,11 @@
 import React from 'react';
 import {render} from 'react-dom';
-import App from './App';
+import App from './AppInput';
 import * as serviceWorker from './serviceWorker';
 
 render(
   <div>
-    <App color='#FFF' onChange={({hex})=>console.log('App1', hex)}/>
+    <App/>
   </div>
   ,
   document.getElementById('root')
