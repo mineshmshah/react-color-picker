@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker';
 
 render(
   <div>
-    <App color='#FFF' onChange={({hex})=>console.log('App1', hex)}/>
+    <App color='#FFFFF' onChange={({hex})=>console.log('App1', hex)}/>
   </div>
   ,
   document.getElementById('root')
