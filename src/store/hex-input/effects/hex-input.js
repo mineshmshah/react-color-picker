@@ -6,13 +6,17 @@ import { RGBtoHSL } from "../../../utils/RGBtoHSL";
 
 function * validateHexInput () {
 
-  let inputValue = yield select(state => state.hexInput.hex_input)
-  const colorHexValue = yield select(state => state.color.hex)
+  let inputValue = yield select(state => state.hexInput.hex_input);
+  const colorHexValue = yield select(state => state.color.hex);
 
   const valid  = /(^#{0,1}[0-9A-F]{6}$)|(^#{0,1}[0-9A-F]{3}$)|(^#{0,1}[0-9A-F]{8}$)|(^#{0,1}[0-9A-F]{4}$)/i.test(inputValue);
 
 
   if (valid) {
+    let  storeValue = inputValue;
+    if (storeValue[0] !== '#')
+      storeValue = `#${storeValue}`;
+
     if (inputValue[0] === '#')
       inputValue = inputValue.slice(1, inputValue.length);
 
@@ -36,7 +40,7 @@ function * validateHexInput () {
     const newHSV = RGBtoHSV(FinalRed, FinalGreen, FinalBlue);
     yield put({
       type: colorTypes.UPDATE_HEX,
-      value: `#${inputValue}`
+      value: storeValue
     });
     yield put({
       type: colorTypes.UPDATE_A,

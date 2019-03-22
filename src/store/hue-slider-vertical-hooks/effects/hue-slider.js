@@ -22,8 +22,7 @@ function * updateColorsWithHueSliderVerticalHooks ({value}) {
   const updatedColors = yield select(state => state.color);
 
   const { r , g , b, hex } = updatedColors;
-  const hexAlpha = hex.slice(7,9);
-  const newHex = RGBtoHex(r,g,b, hexAlpha);
+  const newHex = RGBtoHex(r,g,b, hex);
   yield put({
     type:colorTypes.UPDATE_HEX,
     value: newHex

@@ -26,10 +26,9 @@ function * validateRGBInput ({value, min, max}) {
 
     const currentColors = yield select(state => state.color);
     const { r , g , b, hex } = currentColors;
-    const hexAlpha = hex.slice(7,9);
     const newHSL = RGBtoHSL(r,g,b);
     const newHSV = RGBtoHSV(r,g,b);
-    const newHex = RGBtoHex(r,g,b, hexAlpha);
+    const newHex = RGBtoHex(r,g,b, hex);
 
     yield put({
       type:colorTypes.UPDATE_HSL_COMBO,

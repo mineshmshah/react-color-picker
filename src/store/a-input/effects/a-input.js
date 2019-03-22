@@ -1,6 +1,7 @@
 import {takeEvery, put, select} from 'redux-saga/effects'
 import aInputTypes from '../actions/types'
 import colorTypes from '../../color/actions/types'
+import { transformHexForAlpha } from '../../../utils/transformHEXforAlpha'
 
 function * validateAInput () {
 
@@ -17,15 +18,7 @@ function * validateAInput () {
 
   if (validityCheck) {
     let hexValue = yield select(state => state.color.hex);
-    const transformedValue = Math.round(parsedInput * 255);
-    let newAlphaHex = transformedValue.toString(16).toUpperCase();
-    if (transformedValue < 16) newAlphaHex = `0${newAlphaHex}`;
-
-    if(parsedInput === 1) {
-      hexValue = hexValue.slice(0,7)
-    } else {
-      hexValue = hexValue.slice(0,7).concat(newAlphaHex)
-    }
+    hexValue = transformHexForAlpha(hexValue, parsedInput);
 
     yield put({
       type:colorTypes.UPDATE_HEX,
