@@ -22,18 +22,21 @@ class Color extends  Component {
   }
 
   componentDidMount(){
-    this.handleChange();
-    this.updateColor()
+    this.updateColor();
   }
 
   componentDidUpdate(previousProps) {
-
+    if(previousProps.color !== this.props.color){
+      this.updateColor()
+    }
     const colorHasChanged = ['r', 'g', 'b', 'a', 'h', 'sl', 'sv', 'l', 'v','hex']
       .some(key =>
         previousProps[key] !== this.props[key]
       );
 
-    if (colorHasChanged) this.handleChange()
+    if (colorHasChanged) {
+      this.handleChange();
+    }
   }
 
   handleChange(){

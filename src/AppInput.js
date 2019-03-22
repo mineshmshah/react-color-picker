@@ -11,7 +11,7 @@ class App extends Component {
     // https://redux.js.org/recipes/isolating-redux-sub-apps
     this.store = configureStore()
     this.state = {
-      color: '654645'
+      color: '#654645'
     }
   }
 
